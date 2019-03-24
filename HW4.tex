@@ -36,6 +36,61 @@
 %\nipsfinalcopy % Uncomment for camera-ready version
 
 \begin{document}
+	\textbf{Exercise 4.2}\par
+	\begin{enumerate}
+	\item Since $$E(T)=\sum_{n=0}^\infty (2n+1)C_{n}p^{n+1}(1-p)^{n}$$
+	and
+	\begin{align*}
+	\sum_{n=0}^\infty (2n+1)C_{n}p^{n+1}(1-p)^{n}&=p\sum_{n=0}^\infty \frac{2n+1}{n+1} \binom{2n}{n}[p(1-p)]^{n}\\
+	&<2p\sum_{n=0}^\infty \binom{2n}{n}[p(1-p)]^{n}\\
+	&<2p\sum_{n=0}^\infty 2^{2n}[p(1-p)]^{n}\\
+	&=2p\sum_{n=0}^\infty [4p(1-p)]^{n}\\
+	\end{align*}
+	we have $$E(T)<2p\sum_{n=0}^\infty [4p(1-p)]^{n}$$
+	Since $p>\frac{1}{2}$, then $4p(1-p)<1$.\par
+	Thus, $$E(T)<\frac{2p}{1-4p(1-p)}$$ $E(T)$ is finite.
+	\item We denote $$g(x)=C_0+C_1x+C_2x^2+...+C_{n}x^{n}+...$$ where $C_{n}$ is Calatan number.\par
+	We can compute that $$[g(x)]^2=C_0^2+(C_0C_1+C_1C_0)x+(C_0C_2+C_1^2+C_2C_0)x^2+...+(C_0C_{n}+C_1C_{n-1}+...+C_{n}C_0)x^{n}+...$$
+	Since $$C_{n}=C_0C_{n-1}+C_1C_{n-2}+...+C_{n-1}C_0$$
+	we have $$[g(x)]^2=C_0^2+C_2x+C_3x^2+C_4x^3+...+C_{n+1}x^{n}+...$$
+	Since $C_0=C_1=1$, we have $x[g(x)]^2=g(x)-1$.\par
+	We solve the equation and get
+	$$g(x)=\frac{1\pm\sqrt{1-4x}}{2x}$$
+	Since $g(0)=1$, thus 
+	$$g(x)=\frac{1-\sqrt{1-4x}}{2x}$$
+	$$g'(x)=\frac{1}{x\sqrt{1-4x}}-\frac{1-\sqrt{1-4x}}{2x^2}$$
+	So,
+	\begin{align*}
+	E(T)&=\sum_{n=0}^\infty (2n+1)C_{n}p^{n+1}(1-p)^{n}\\
+	&=2p\sum_{n=0}^\infty nC_{n}[p(1-p)]^{n}+p\sum_{n=0}^\infty C_{n}[p(1-p)]^{n}\\
+	&=2p^2(1-p)\times (g[p(1-p)])'+p\times g[p(1-p)]\\
+	&=\frac{2p^2(1-p)}{p(1-p)\sqrt{1-4p(1-p)}}-\frac{1-\sqrt{1-4p(1-p)}}{1-p}+p\times \frac{1-\sqrt{1-4p(1-p)}}{2p(1-p)}\\
+	&=\frac{2p}{\sqrt{1-4p(1-p)}}-\frac{1-\sqrt{1-4p(1-p)}}{2(1-p)}\\
+	&=\frac{2p}{2p-1}-\frac{2(1-p)}{2(1-p)}\\
+	&=\frac{1}{2p-1}
+	\end{align*}
+	\end{enumerate}
+	
+	\textbf{Exercise 4.4}\par
+	$$E[\frac{1}{T+1}]=\sum_{n=0}^\infty \frac{1}{2(n+1)}C_{n}p^{n+1}(1-p)^{n}$$
+	We denote $$g(x)=C_0+C_1x+C_2x^2+...+C_{n}x^{n}+...$$ where $C_{n}$ is Calatan number.\par
+	We can compute that $$[g(x)]^2=C_0^2+(C_0C_1+C_1C_0)x+(C_0C_2+C_1^2+C_2C_0)x^2+...+(C_0C_{n}+C_1C_{n-1}+...+C_{n}C_0)x^{n}+...$$
+	Since $$C_{n}=C_0C_{n-1}+C_1C_{n-2}+...+C_{n-1}C_0$$
+	we have $$[g(x)]^2=C_0^2+C_2x+C_3x^2+C_4x^3+...+C_{n+1}x^{n}+...$$
+	Since $C_0=C_1=1$, we have $x[g(x)]^2=g(x)-1$.\par
+	We solve the equation and get
+	$$g(x)=\frac{1\pm\sqrt{1-4x}}{2x}$$
+	Since $g(0)=1$, thus 
+	$$g(x)=\frac{1-\sqrt{1-4x}}{2x}$$
+	$$G(x)=\sum_{n=0}^\infty \frac{1}{n+1}C_{n}x^{n+1}=\int_{0}^{x} g(t)dt=\ln(\sqrt{1-4x}+1)-\sqrt{1-4x}-\ln 2+1$$
+	Since $p=\frac{1}{2}$, then 
+	\begin{align*}
+	E[\frac{1}{T+1}]&=\frac{1}{4}\sum_{n=0}^\infty \frac{1}{n+1}C_{n}(\frac{1}{4})^n\\
+	&=\sum_{n=0}^\infty \frac{1}{n+1}C_{n}(\frac{1}{4})^{n+1}\\
+	&=G(\frac{1}{4})\\
+	&=1-\ln 2
+	\end{align*}
+
     \textbf{Exercise 4.5}\par
     $Proof$.
     Suppose $A_i$ whose strength is $a_i$ and $B_j$ whose strength is $b_j$ fight.After fighting,for $A_i$ we have
