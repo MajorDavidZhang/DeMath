@@ -10,7 +10,7 @@
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
-\title{CS499 Homework 3 (First Draft)}
+\title{CS499 Homework 4 (First Draft)}
 
 
 \author{
@@ -36,7 +36,32 @@
 %\nipsfinalcopy % Uncomment for camera-ready version
 
 \begin{document}
-
+    \textbf{Exercise 4.5}\par
+    $Proof$.
+    Suppose $A_i$ whose strength is $a_i$ and $B_j$ whose strength is $b_j$ fight.After fighting,for $A_i$ we have
+    $$
+    E(strength_{A_i})=\frac{a_i}{a_i+b_j}\cdot (a_i+b_j)+\frac{b_j}{a_i+b_j}\cdot 0=a_i
+    $$
+    So after $\forall k$ wars,
+    $$
+    E(\sum strength_{A_i})=\sum_{i=1}^{m}a_i
+    $$
+    $$
+    E(\sum strength_{B_j})=\sum_{j=1}^{n}b_j
+    $$
+    Now let's compute $E(\sum strength_{A_i})$ in a different way:\par
+    Wars has only two results:Alice'team wins or Bob's team wins.\par
+    The former happens with probability $p$,
+    the latter with probability $1-p$.\par
+    Thus
+    $$
+    E(\sum strength_{A_i})=(\sum_{i=1}^{m}a_i+\sum_{j=1}^{n}b_j)\cdot p+0\cdot (1-p)
+    $$
+    Therefore,
+    $$
+    p=\frac{\sum_{i=1}^{m}a_i}{\sum_{i=1}^{m}a_i+\sum_{j=1}^{n}b_j}
+    $$
+    So the probability of Alice's team winning does not depend on the order in which Alice and Bob send their monsters into the arena.
 
 
 \end{document}
