@@ -130,7 +130,7 @@
     So the probability of Alice's team winning does not depend on the order in which Alice and Bob send their monsters into the arena.
  
    \textbf{Exercise 4.6}\par
-	\textbf{proof} Define Alice's winning probability of an order $\{a_{i_1},a_{i_2},\cdot,a_{i_n}\}$ is $Pr_{i_1i_2 \cdot i_n:m}$,in which m is the number of robots in team B, $p_{ij}=\frac{ai}{ai+bj}$,$q_{ij}=1-p{ij}$  We use the induction to prove.\\
+	\textbf{proof} Define Alice's winning probability of an order $\{a_{i_1},a_{i_2},\cdot,a_{i_n}\}$ is $Pr_{i_1i_2 \cdot i_n:m}$,in which m is the number of robots in team B, $p_{ij}=\frac{a_i}{a_i+b_j}$,$q_{ij}=1-p_{ij}$  We use the induction to prove.\\
 
     \textbf{lemma} Consider there are only two robot in Alice's team(we call it team A) and m in Bob's team(we call it team B), the probability of team A is
     \begin{equation}
@@ -185,9 +185,9 @@
     Pr_{n:k}=p_{n1}p_{n2}\cdots p_{nk}
     $$
     $$
-    Pr{n-1:k}=p_{(n-1)1}p_{(n-1)2}\cdots p_{(n-1)k}
+    Pr_{(n-1):k}=p_{(n-1)1}p_{(n-1)2}\cdots p_{(n-1)k}
 	$$
-	and plug the lemma to rewrite $Pr_{n(n-1):k-1} and Pr_{(n-1)n:k-1}$
+	and plug the lemma to rewrite $Pr_{n(n-1):k-1}$ and $Pr_{(n-1)n:k-1}$
 	$$
 	Pr_{n(n-1):k-1}=Pr_{(n-1)n:k-1}=
 	\frac{q_{n1}p_{(n-1)1}\cdots p_{(n-1)k}-q_{(n-1)1}p_{n1}\cdots p_{nk}}{p_{(n-1)1}-p{n1}}
