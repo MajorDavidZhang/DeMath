@@ -120,6 +120,75 @@
     p=\frac{\sum_{i=1}^{m}a_i}{\sum_{i=1}^{m}a_i+\sum_{j=1}^{n}b_j}
     $$
     So the probability of Alice's team winning does not depend on the order in which Alice and Bob send their monsters into the arena.
+ 
+   \textbf{Exercise 4.6}\par
+	\textbf{proof} Define Alice's winning probability of an order $\{a_{i_1},a_{i_2},\cdot,a_{i_n}\}$ is $Pr_{i_1i_2 \cdot i_n:m}$,in which m is the number of robots in team B, $p_{ij}=\frac{ai}{ai+bj}$,$q_{ij}=1-p{ij}$  We use the induction to prove.\\
+
+    \textbf{lemma} Consider there are only two robot in Alice's team(we call it team A) and m in Bob's team(we call it team B), the probability of team A is
+    \begin{equation}
+     Pr_{12:m}=\frac{q_{12}p_{21}\dots p_{2m}-q_{21}p_{11}\dots p_{1m}}{p_{21}-p_{11}}
+    \end{equation}
+    We use induction to prove.When $m=2$,we can easily get
+    \begin{equation}
+    Pr_{12}=Pr_{21}=\frac{a_1a_2+a_1b_2+a_2b_2}{(a_1+b_2)(a_2+b_2)}=\frac{q_{12}p_{21}p_{22}-q_{21}p_{11}p_{12}}{p_{21}-p_{11}}
+    \end{equation}
+    Assume the lemma is true when m=k-1,then
+    \begin{equation}
+    \begin{aligned}
+    Pr_{12:k}&=p_{11}Pr_{12:k-1}+q_{11}p_{21}\cdots p_{2k}\\
+    		 &=p_{11}\cdot \frac{q_{12}p_{22}\dots p_{2k}-q
+    		 	_{22}p_{12}\dots p_{1k}}{p_{22}-p_{12}}+q_{11}p_{21}\cdots p_{2k}
+    \end{aligned}
+    \end{equation}
+    Consider that
+    $$
+    \frac{p_{22}q_{12}}{p_{22}-p_{12}}=\frac{q_{11}p_{21}}{p_{21}-p_{11}}=\frac{a_1}{a_2-a_1}
+    $$
+    $$
+    \frac{p_{12}q_{22}}{p_{22}-p_{12}}=\frac{q_{21}p_{11}}{p_{21}-p_{11}}=\frac{a_2}{a_2-a_1}
+    $$
+    Plug it into the formula of $Pr$
+    $$
+    Pr_{12:k}=\frac{q_{12}p_{21}\dots p_{2k}-q_{21}p_{11}\dots p_{1k}}{p_{21}-p_{11}}
+    $$
+    So the lemma proved true.\\
+
+     Assume that for team B with $m-1$ robots,the winning probability of team A is regardless of the order. \textbf{\romannumeral1}Consider team B with $m$ robots, the winning prabability with the order$ \{1,2,3,\cdots,n\}$ is
+      \begin{equation}
+     \begin{aligned}
+     Pr_{123\cdots (n-1)n:m}&=p_{11}Pr_{123\cdots n:(m-1)}+q_{11}Pr_{123\cdots n-1:m}\\
+     &=p_{11}Pr_{123\cdots n:(m-1)}+q_{11}p_{21}Pr_{123\cdots n-1:m}+\cdots\\&+q_{11}q_{12}\cdots q_{(n-2)1}p_{(n-1)1}Pr_{(n-1)n:k-1}+q_{11}q{12}\cdots q_{(n-2)1}q_{(n-1)1}Pr_{n:k}
+     \end{aligned}
+     \end{equation}
+     exchange the order of last two robots, the winning prabability is
+     \begin{equation}
+     \begin{aligned}
+     Pr_{123\cdots n(n-1):m}&=p_{11}Pr_{123\cdots n:(m-1)}+q_{11}Pr_{123\cdots n-1:m}\\
+     &=p_{11}Pr_{123\cdots n:(m-1)}+q_{11}p_{21}Pr_{123\cdots n-1:m}+\cdots\\&+q_{11}q_{12}\cdots q_{(n-2)1}p_{n1}Pr_{(n(n-1):k-1}+q_{11}q_{12}\cdots q_{(n-2)1}q_{n1}Pr_{n-1:k}
+     \end{aligned}
+     \end{equation}
+    It's observed that only the last 2 terms are different,compare it by subtraction
+    $$
+    Pr_{123\cdots (n-1)n:m}-Pr_{123\cdots n(n-1):m}
+    =q_{11}q_{12}\cdots q_{(n-2)1}(p_{(n-1)1}Pr_{(n-1)n:k-1}+q_{(n-1)1}Pr_{n:k}-p_{n1}Pr_{2n(n-1)k-1}-q_{n1}Pr_{n-1:k})
+    $$
+    Consider that
+    $$
+    Pr_{n:k}=p_{n1}p_{n2}\cdots p_{nk}
+    $$
+    $$
+    Pr{n-1:k}=p_{(n-1)1}p_{(n-1)2}\cdots p_{(n-1)k}
+	$$
+	and plug the lemma to rewrite $Pr_{n(n-1):k-1} and Pr_{(n-1)n:k-1}$
+	$$
+	Pr_{n(n-1):k-1}=Pr_{(n-1)n:k-1}=
+	\frac{q_{n1}p_{(n-1)1}\cdots p_{(n-1)k}-q_{(n-1)1}p_{n1}\cdots p_{nk}}{p_{(n-1)1}-p{n1}}
+	$$
+	then we can get the result
+	$$
+	Pr_{123\cdots (n-1)n:m}-Pr_{123\cdots n(n-1):m}=0
+	$$
+	\textbf{\romannumeral2}Similarly, when exchanging the order of any 2 robots, we can use the method showed in \textbf{\romannumeral1} to prove they have the same winning probability. Thus,the proposition proved true.
 
 
 \end{document}
