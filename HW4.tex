@@ -80,7 +80,7 @@
 
 
 	\textbf{Exercise 4.3}\par
-	This proof went wrong because when $p<\frac{1}{2}$, $T$ does not have a distribution sequence. As we have already known, $\sum Pr[T=i]=\sum C_n p^{n+1}(1-p)^n<1$, and it fails to satisfy the normalization of a distribution sequence that $\sum Pr[T=i]=1$, so $T$ can never have an expectation.
+	This proof went wrong because when $p<\frac{1}{2}$, $T$ does not have a distribution sequence. As we have already known, $\sum_{i=0}^{\infty} Pr[T=i]=\sum_{n=0}^{\infty} C_n p^{n+1}(1-p)^n<1$, and it fails to satisfy the normalization of a distribution sequence that $\sum_{i=0}^{\infty} Pr[T=i]=1$, so $T$ can never have an expectation.
 	
 	\textbf{Exercise 4.4}\par
 	$$E[\frac{1}{T+1}]=\sum_{n=0}^\infty \frac{1}{2(n+1)}C_{n}p^{n+1}(1-p)^{n}$$
@@ -161,7 +161,7 @@
     $$
     So the lemma proved true.\\
 
-     Assume that for team B with $m-1$ robots,the winning probability of team A is regardless of the order. \textbf{\romannumeral1}Consider team B with $m$ robots, the winning prabability with the order$ \{1,2,3,\cdots,n\}$ is
+     Assume that for team B with $m-1$ robots,the winning probability of team A is regardless of the order. \textbf{\romannumeral1}\ Consider team B with $m$ robots, the winning prabability with the order$ \{1,2,3,\cdots,n\}$ is
       \begin{equation}
      \begin{aligned}
      Pr_{123\cdots (n-1)n:m}&=p_{11}Pr_{123\cdots n:(m-1)}+q_{11}Pr_{123\cdots n-1:m}\\
@@ -196,7 +196,7 @@
 	$$
 	Pr_{123\cdots (n-1)n:m}-Pr_{123\cdots n(n-1):m}=0
 	$$
-	\textbf{\romannumeral2}Similarly, when exchanging the order of any 2 robots, we can use the method showed in \textbf{\romannumeral1} to prove they have the same winning probability. Thus,the proposition proved true.
+	\textbf{\romannumeral2}\ Similarly, when exchanging the order of any 2 robots, we can use the method showed in \textbf{\romannumeral1} \ to prove they have the same winning probability. Thus,the proposition proved true.
 
 	\textbf{Questions}\par
 	\textbf{1.}\par
