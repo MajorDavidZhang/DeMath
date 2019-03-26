@@ -38,6 +38,10 @@
 \begin{document}
 
 	\maketitle
+	\textbf{Exercise 4.1}\par
+	This proof goes wrong when it calculates $E[X_T]$ in a second way. According to this proof, T is a certain number. Thus, after walking T steps, actually we can reach i with probability $Pr[T,i] (i=0,1,2,\cdots ,k)$. And obviously, none of $Pr[T,i]$ equals 0 for a certain T. So we cannot derive the equation $E[X_T] = k\cdot p_j + 0 \cdot (1-p_j)$ .
+	If we slightly change the proof, the equation can be derived correctly. We let $T\to \infty$, of course, $${\lim_{T\to \infty}} Pr[T,i]=0 (i=1,2,\cdots ,k-1)$$ $${\lim_{T\to \infty}}Pr[T,k]=P_j$$ $${\lim_{T\to \infty}} Pr[T,0]=1-P_j$$ In this way the equation works.
+
 
 	\textbf{Exercise 4.2}\par
 	\begin{enumerate}
@@ -73,6 +77,10 @@
 	&=\frac{1}{2p-1}
 	\end{align*}
 	\end{enumerate}
+
+
+	\textbf{Exercise 4.3}\par
+	This proof went wrong because when $p<\frac{1}{2}$, $T$ does not have a distribution sequence. As we have already known, $\sum Pr[T=i]=\sum C_n p^{n+1}(1-p)^n<1$, and it fails to satisfy the normalization of a distribution sequence that $\sum Pr[T=i]=1$, so $T$ can never have an expectation.
 	
 	\textbf{Exercise 4.4}\par
 	$$E[\frac{1}{T+1}]=\sum_{n=0}^\infty \frac{1}{2(n+1)}C_{n}p^{n+1}(1-p)^{n}$$
@@ -190,8 +198,16 @@
 	$$
 	\textbf{\romannumeral2}Similarly, when exchanging the order of any 2 robots, we can use the method showed in \textbf{\romannumeral1} to prove they have the same winning probability. Thus,the proposition proved true.
 
+	\textbf{Questions}\par
+	\textbf{1.}\par
+	When we work on Exercise 4.5 \& 4.6, we find an interesting phenomenon.
+	In Exercise 4.5, we have proved that the probability of victory only depends on the sum of robots’ strengths. But in 4.6, it does not work. For example, if two teams both have 1 robot with strength 1, obviously probability of victory is 50\%. Then if one team separates the robot into n parts, each part with strength $\frac{1}{n}$, its probability of loss is $(\frac{n}{n+1})^n$ . We can calculate that $$\lim_{n\to \infty}(\frac{n}{n+1})^n=\frac{1}{e}$$  which means one can raise its winning probability by dividing its robot.
+	So in 4.6, we cannot use the sum of robots’ strength exclusively as the strength of a team. Then how can we evaluate a team’s strength?\par
+\textbf{2.}\par
+	How can we deal with problems like Exercise 4.6, with lots of variables and circumstances?
+
+
 
 \end{document}
 	
-	
-	\maketitle
+
