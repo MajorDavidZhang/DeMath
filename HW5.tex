@@ -39,7 +39,82 @@
 
 	\maketitle
 	\textbf{Exercise 5.1}\par
+
+\textbf{(1)} The degree of a vertex is defined as the number of edges linked to this vertex. And the score of a graph is a sequence ranking degree of all vertices from small to big.\par
+
+\textbf{(2)} Graph score theorem states that, if we can find a graph for graph score $(d_1, \cdots ,d_{n-1},d_n)$, then we can find a graph for graph score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$, and vice versa. If we finally get graph score $(\phi)$, the graph exists.\par
+
+\textbf{(3)} Graph score algorithm:\\
+First, we get a graph score $(d_1, \cdots ,d_{n-1},d_n)$.\\
+If $d_N>n-1$, we cannot find a graph. Otherwise, we add an edge from $d_n$ to $d_{n-d_n},\cdots d_{n-1}$, and check the graph score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$ after it is sorted.\\
+We repeat the previous step. If the graph score finally comes to $(\phi)$, the graph exists.\par
+
+\textbf{(4)} The most difficult part is to prove if we can find a graph for graph score $(d_1, \cdots ,d_{n-1},d_n)$, then we can find a graph for graph score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$. We can suppose there is a solution without edge between $n$ and $k$ $(n-d_n\leq k\leq n-1)$, so n must have another link with $j \ (j\leq n-d_{n-1}<k)$. As $j<k$, we know $d_j\leq d_k$, so $k$ must have edge with some point $l$ and $l\neq k$. We change the edges $(n,j)\  (k,l)$ to $(n,k)\  (j,l)$, and we add an edge between $n$ and $k$ without changing the score. In this way, we can transform the answer to make sure there is an edge from $d_n$ to $d_{n-d_n},\cdots ,d_{n-1}$. Then we delete these edges, we get a graph for score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$.\par
+
+
+
+
+	\textbf{Exercise 5.11}\par
+	(For convenience, we ignore the 0 (a dot) in the following)\par
+	\textbf{ID:517030910250}\par
+	(1)(2) It is neither a graph score nor a multigtaph score because the sum of the ID is an odd number.
+	(3) It is a weighted graph score, as is shown in the following figure.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{10250.png}
+		\caption{}
+		\label{fig:1}
+	\end{figure}
+	（4）Since it is a weighted graph score, it is the score of a graph with real edge weights.
+
+	\textbf{ID:517030910258}\par
+	(1)(2) It is neither a graph score nor a multigtaph score because the sum of the ID is an odd number.
+	(3) It is a weighted graph score, as is shown in the following figure.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{10258.png}
+		\caption{}
+		\label{fig:2}
+	\end{figure}
+	（4）Since it is a weighted graph score, it is the score of a graph with real edge weights.
+
+	\textbf{ID:517030910029}\par
+	(1)(2) It is neither a graph score nor a multigtaph score because the sum of the ID is an odd number.
+	(3) It is a weighted graph score, as is shown in the following figure.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{10029.png}
+		\caption{}
+		\label{fig:3}
+	\end{figure}
+	（4）Since it is a weighted graph score, it is the score of a graph with real edge weights.
+
+	\textbf{ID:517030910227}\par
+	(1)(2) It is neither a graph score nor a multigtaph score because the sum of the ID is an odd number.
+	(3) It is a weighted graph score, as is shown in the following figure.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{10227.png}
+		\caption{}
+		\label{fig:4}
+	\end{figure}
+	（4）Since it is a weighted graph score, it is the score of a graph with real edge weights.
+
+	\textbf{ID:517030910263}\par
+	(1)(2) It is neither a graph score nor a multigtaph score because the sum of the ID is an odd number.
+	(3) It is a weighted graph score, as is shown in the following figure.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{10263.png}
+		\caption{}
+		\label{fig:5}
+	\end{figure}
+	（4）Since it is a weighted graph score, it is the score of a graph with real edge weights.
 
 	\textbf{Questions}\par
 	
