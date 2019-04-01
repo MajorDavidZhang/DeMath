@@ -51,6 +51,24 @@ We repeat the previous step. If the graph score finally comes to $(\phi)$, the g
 
 \textbf{(4)} The most difficult part is to prove if we can find a graph for graph score $(d_1, \cdots ,d_{n-1},d_n)$, then we can find a graph for graph score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$. We can suppose there is a solution without edge between $n$ and $k$ $(n-d_n\leq k\leq n-1)$, so n must have another link with $j \ (j\leq n-d_{n-1}<k)$. As $j<k$, we know $d_j\leq d_k$, so $k$ must have edge with some point $l$ and $l\neq k$. We change the edges $(n,j)\  (k,l)$ to $(n,k)\  (j,l)$, and we add an edge between $n$ and $k$ without changing the score. In this way, we can transform the answer to make sure there is an edge from $d_n$ to $d_{n-d_n},\cdots ,d_{n-1}$. Then we delete these edges, we get a graph for score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$.\par
 
+\textbf{Exercise 5.8\&5.9}\par
+	(Score Theorem for Graphs with Real Edge Weights). Let $(a_1,\cdots, a_n)\in\mathbb{R}^n$. 
+	There is a graph with real edge weights with this score if and only if $n=2$ and $a_1=a_2$ or $n\ge 3$.
+	 
+\textbf{Exercise 5.10}\par
+	\textbf{Proof:}
+	If $n=2$ and $a_1=a_2$, it is obviously true.\par
+	Consider $n\ge 3$, we let the graph be a $n$ polygon. For each edge between adjacent vertexes, the edge weight is $x_i$. 
+	Thus we have $(x_1,\cdots, x_n)\in\mathbb{R}^n$ and  $n$ equations:
+	\begin{align*}
+	x_{n}+x_1&=a_1\\
+	x_1+x_2&=a_2\\
+	x_2+x_3&=a_3\\
+	\cdots\\
+	x_{n-1}+x_{n}&=a_{n}
+	\end{align*}
+	Obviously there are $n$ variables and $n$ equations, so there must exist real solutions for $x_i$.\par
+	Thus, for any $(a_1,\cdots, a_n)\in\mathbb{R}^n$ and $n\ge 3$, there must exist a graph with real edge weights with this score.
 
 
 
