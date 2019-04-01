@@ -51,6 +51,21 @@ We repeat the previous step. If the graph score finally comes to $(\phi)$, the g
 
 \textbf{(4)} The most difficult part is to prove if we can find a graph for graph score $(d_1, \cdots ,d_{n-1},d_n)$, then we can find a graph for graph score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$. We can suppose there is a solution without edge between $n$ and $k$ $(n-d_n\leq k\leq n-1)$, so n must have another link with $j \ (j\leq n-d_{n-1}<k)$. As $j<k$, we know $d_j\leq d_k$, so $k$ must have edge with some point $l$ and $l\neq k$. We change the edges $(n,j)\  (k,l)$ to $(n,k)\  (j,l)$, and we add an edge between $n$ and $k$ without changing the score. In this way, we can transform the answer to make sure there is an edge from $d_n$ to $d_{n-d_n},\cdots ,d_{n-1}$. Then we delete these edges, we get a graph for score $(d_1, \cdots ,d_{n-d_n-1},d_{n-d_n}-1,\cdots d_{n-1}-1)$.\par
 
+\textbf{Exercise 5.2}\par
+	Let's define an operation of a sequence:subtract 1 from the two largest number. \par
+	\textbf{Theorem 5.3} can be written as: Let $(a_1,...,a_n) \in N^{n}_0$ . There is a multigraph with this score if and only if after $\frac{\sum_{n=1}^Na_n}{2}$ operations,all the numbers in the sequence are 0 (we name a sequence consists of 0 a "zero sequence").\par
+	\textbf{Exercise 5.4}\par
+	\textbf{proof}\par 
+	 \textbf{(1)}If there is a multigraph with score $(a_1,...,a_n)$ satisfying$a_1\leq a_2\leq ...\leq a_n$ :\par
+	  \textbf{(i)} if $a_{n-1}=1$, there must be an even number of 1s, it's obvious that we can change its score sequence to a zero sequence through several operations.\par
+	  \textbf{(ii)} if $a_{n-1}=1$ and there is an edge$(v_{n-1},v_n)$, delete this edge and we get a multigraph with score $(a_1,...a_{n-1}-1,a_n-1)$. Repeat this operation and we would get a zero sequence eventually.\par
+	  \textbf{(iii)} else there must be an edge $(v_k,v_n)$ and an edge$(v_l,v_{n-1})$ such that $k\not=l$. Delte these two edges and add an edge$(v_k,v_l)$ and we get a multigraph with score $(a_1,...a_{n-1}-1,a_n-1)$.Repeat this operation and we would get a zero sequence eventually.\par
+	  \textbf{(2)}\par
+	  If a sequence can transform into a zero sequence, we can get a multigraph with the score sequence by undoing an operation and add an edge accordingly $\frac{\sum_{n=1}^Na_n}{2}$ times.\\
+	  \textbf{Theorem 5.3} proves ture based on \textbf{1} and \textbf{2}.
+	
+	
+
 \textbf{Exercise 5.8\&5.9}\par
 	(Score Theorem for Graphs with Real Edge Weights). Let $(a_1,\cdots, a_n)\in\mathbb{R}^n$. 
 	There is a graph with real edge weights with this score if and only if $n=2$ and $a_1=a_2$ or $n\ge 3$.
