@@ -10,7 +10,7 @@
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
-\title{CS499 Homework 4 (First Draft)}
+\title{CS499 Homework 4}
 
 
 \author{
@@ -45,7 +45,7 @@
 
 	\textbf{Exercise 4.2}\par
 	\begin{enumerate}
-	\item Since $$E(T)=\sum_{n=0}^\infty (2n+1)C_{n}p^{n+1}(1-p)^{n}$$
+	\item Since $$E(T)=\sum_{n=0}^\infty (2n+1)C_{n}p^{n+1}(1-p)^{n}$$ 
 	and
 	\begin{align*}
 	\sum_{n=0}^\infty (2n+1)C_{n}p^{n+1}(1-p)^{n}&=p\sum_{n=0}^\infty \frac{2n+1}{n+1} \binom{2n}{n}[p(1-p)]^{n}\\
@@ -53,10 +53,11 @@
 	&<2p\sum_{n=0}^\infty 2^{2n}[p(1-p)]^{n}\\
 	&=2p\sum_{n=0}^\infty [4p(1-p)]^{n}\\
 	\end{align*}
+	\textbf{where $C_{n}$ is Calatan number.}\par
 	we have $$E(T)<2p\sum_{n=0}^\infty [4p(1-p)]^{n}$$
 	Since $p>\frac{1}{2}$, then $4p(1-p)<1$.\par
 	Thus, $$E(T)<\frac{2p}{1-4p(1-p)}$$ $E(T)$ is finite.
-	\item We denote $$g(x)=C_0+C_1x+C_2x^2+...+C_{n}x^{n}+...$$ where $C_{n}$ is Calatan number.\par
+	\item We denote $$g(x)=C_0+C_1x+C_2x^2+...+C_{n}x^{n}+...$$ \textbf{where $C_{n}$ is Calatan number.}\par
 	We can compute that $$[g(x)]^2=C_0^2+(C_0C_1+C_1C_0)x+(C_0C_2+C_1^2+C_2C_0)x^2+...+(C_0C_{n}+C_1C_{n-1}+...+C_{n}C_0)x^{n}+...$$
 	Since $$C_{n}=C_0C_{n-1}+C_1C_{n-2}+...+C_{n-1}C_0$$
 	we have $$[g(x)]^2=C_0^2+C_2x+C_3x^2+C_4x^3+...+C_{n+1}x^{n}+...$$
@@ -84,7 +85,7 @@
 	
 	\textbf{Exercise 4.4}\par
 	$$E[\frac{1}{T+1}]=\sum_{n=0}^\infty \frac{1}{2(n+1)}C_{n}p^{n+1}(1-p)^{n}$$
-	We denote $$g(x)=C_0+C_1x+C_2x^2+...+C_{n}x^{n}+...$$ where $C_{n}$ is Calatan number.\par
+	We denote $$g(x)=C_0+C_1x+C_2x^2+...+C_{n}x^{n}+...$$ \textbf{where $C_{n}$ is Calatan number.}\par
 	We can compute that $$[g(x)]^2=C_0^2+(C_0C_1+C_1C_0)x+(C_0C_2+C_1^2+C_2C_0)x^2+...+(C_0C_{n}+C_1C_{n-1}+...+C_{n}C_0)x^{n}+...$$
 	Since $$C_{n}=C_0C_{n-1}+C_1C_{n-2}+...+C_{n-1}C_0$$
 	we have $$[g(x)]^2=C_0^2+C_2x+C_3x^2+C_4x^3+...+C_{n+1}x^{n}+...$$
