@@ -102,19 +102,13 @@
 	\end{figure}
 	\textbf{One general construction method:} For $k=n$, first we draw a polygon that has n edges. Then we add one vertex in the middle of the polygon and link it with n vertices respectively. After that we add 2 verticies on each edge. Finally, we add one vertex and one edge in every 3 vertices clockwise. 
 
-	\textbf{Question:}\par
-	In Exercise 6.7, if we do not include the constraint that P is a prime number, what conclusion can we get? First, we make a prime factorization on P, which is $P=P_1^{A_1}\cdot P_2^{A_2}\cdot \cdots \cdot P_n^{A_n}$
-  	For every i, $P_i$ is prime number and $A_i$ is positive integer.
-	We have a hypothesis that the number of vertices might be $O(P_{max}+A_{max})$. But we don’t know how to prove it. Or do we have another answer?
-
-
 	\textbf{Exercise 6.5}\par
 	For every $n\le6$, there is an asymmetric graph on $n$ vertices, like Figure $1$.
   	\begin{figure}[H]
   	\centering
-  	\includegraphics[scale=0.4]{6.5.png}
+  	\includegraphics[scale=0.4]{65.png}
   	\caption{}
-  	\label{fig:1}
+  	\label{fig:6}
   	\end{figure}
 	When $n=6$, the left graph is correct. When $n>6$, we just need to construct trees like right graphs. 
 	There are only one vertex that has three degrees and  $n-4$ vertices are at the right of this vertex.
@@ -123,9 +117,9 @@
 	For graphs in \textbf{Exercise 6.5}, we just need to add cherries for every vertex, like Figure $2$.
 	\begin{figure}[H]
   	\centering
-  	\includegraphics[scale=0.4]{6.6.png}
+  	\includegraphics[scale=0.4]{66.png}
   	\caption{}
-  	\label{fig:1}
+  	\label{fig:7}
   	\end{figure}
 	The graph has $3n$ vertices with $2^{n}$ automorphisms.
 	\textbf{Exercise 6.7}\par
@@ -135,7 +129,14 @@
 	Assume more than one automorphis bijection is $f$, if there exits a verticle $a$ such that $f(a)=a$ and there are $m$ such automorphis, for an automorphis bijection $g$ such that $g(a) \not=a$, we can form a new bijection $t=f \dot g$, so if $p>m$,$p=m\times (p-m) $  
 	which contradicts the assumption that $p$ is a prime number. we can find out such verticle that remains same in every bijection and assume the number of them is $x$. For other verticles, since the grph is connected, there relative location must remain same in every bijection, and each verticle has only $(p-x)$ locations to be placed, so the number of automorphs is at most $p-x$, which contradicts the assumption. \par
 	Assume that there is no such bijection, For other verticles, since the grph is connected, there relative location must remain same in every bijection, and each verticle has only $p$ locations to be placed, so the number of automorphs is at most $p$.\par
-	To conclude, There is no such graph with less than $p$ verticles.	
+	To conclude, There is no such graph with less than $p$ verticles.	\par
+
+	
+	\textbf{Question:}\par
+	In Exercise 6.7, if we do not include the constraint that P is a prime number, what conclusion can we get? First, we make a prime factorization on P, which is $P=P_1^{A_1}\cdot P_2^{A_2}\cdot \cdots \cdot P_n^{A_n}$
+  	For every i, $P_i$ is prime number and $A_i$ is positive integer.
+	We have a hypothesis that the number of vertices might be $O(P_{max}+A_{max})$. But we don’t know how to prove it. Or do we have another answer?
+
 
 \end{document}
 	
