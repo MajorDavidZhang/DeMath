@@ -39,6 +39,7 @@
 
 	\maketitle
 	\textbf{Exercise 6.1}\par
+
     $(1)$As the picture shows:\par
     \begin{figure}[H]
 		\centering
@@ -67,6 +68,8 @@
     $(3)$For the same reason of $(2)$,if there are 3 points  determined , the graph is determined.\par
     So the number of automorphisms is $8 \times 3! = 48$.
 
+	
+	
 
 	\textbf{Exercise 6.2}\par
     The complete graph on $999$ vertices has $C_{999}^{2}$ edges.The $|E|$ is odd,so the $|E|$ of original graph and the $|E|$ of complement graph is not equal.
@@ -104,6 +107,35 @@
   	For every i, $P_i$ is prime number and $A_i$ is positive integer.
 	We have a hypothesis that the number of vertices might be $O(P_{max}+A_{max})$. But we don’t know how to prove it. Or do we have another answer?
 
+
+	\textbf{Exercise 6.5}\par
+	For every $n\le6$, there is an asymmetric graph on $n$ vertices, like Figure $1$.
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.4]{6.5.png}
+  	\caption{}
+  	\label{fig:1}
+  	\end{figure}
+	When $n=6$, the left graph is correct. When $n>6$, we just need to construct trees like right graphs. 
+	There are only one vertex that has three degrees and  $n-4$ vertices are at the right of this vertex.
+	 
+	\textbf{Exercise 6.6}\par
+	For graphs in \textbf{Exercise 6.5}, we just need to add cherries for every vertex, like Figure $2$.
+	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.4]{6.6.png}
+  	\caption{}
+  	\label{fig:1}
+  	\end{figure}
+	The graph has $3n$ vertices with $2^{n}$ automorphisms.
+	\textbf{Exercise 6.7}\par
+	\textbf{1.} We can use $3p+1$ to form such graph with the method showed in \textbf{Exercise 6.4}\par
+	\textbf{2.} There is no such graph with less than $p$ verticles. Consider a graph with $p$ automorphisms that has as less verticles as possible.\par 
+	If it has two unconnected parts, there are 2 cases: \textbf{1)} one of them has only 1 automorphisms, in which case we can delete this part for less verticles. \textbf{2)} one of them has $m$  automorphisms, the other has $n$ automorphisms, if these 2 parts are different, $p=m \times n$, otherwise $p=2\times m\times n$, which contradicts the assumption that $p$ is a prime number. So the graph must be connected.\par 
+	Assume more than one automorphis bijection is $f$, if there exits a verticle $a$ such that $f(a)=a$ and there are $m$ such automorphis, for an automorphis bijection $g$ such that $g(a) \not=a$, we can form a new bijection $t=f \dot g$, so if $p>m$,$p=m\times (p-m) $  
+	which contradicts the assumption that $p$ is a prime number. we can find out such verticle that remains same in every bijection and assume the number of them is $x$. For other verticles, since the grph is connected, there relative location must remain same in every bijection, and each verticle has only $(p-x)$ locations to be placed, so the number of automorphs is at most $p-x$, which contradicts the assumption. \par
+	Assume that there is no such bijection, For other verticles, since the grph is connected, there relative location must remain same in every bijection, and each verticle has only $p$ locations to be placed, so the number of automorphs is at most $p$.\par
+	To conclude, There is no such graph with less than $p$ verticles.	
 
 \end{document}
 	
