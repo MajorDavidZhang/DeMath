@@ -39,10 +39,24 @@
 
 	\maketitle
 	\textbf{Exercise 7.1}\par
+	\textbf{(1)}  Since e is in the minimum spanning tree, we split the minimum spanning tree into two components by deleting e. Let the vertices in the two components consist $S$ and $V\backslash S$ respectively. Since there is no circle in a tree, obviously e is the only edge which is good and cross this cut, which means no edge from X crosses this cut. \par
+	\textbf{(2)}  Suppose e is not the minimum weight edge crossing this cut, assume there is an edge e' which has less weight and crosses this cut. e' can replace e and consists a spanning tree with less weight. This means e is not in the minimum spanning tree, which means e is not good, which contradicts the condition.\par
+	\textbf{Exercies 7.4}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{P1.png}
+		\caption{}
+		\label{fig:1}
+	\end{figure}
 
+	\textbf{Exercies 7.5}
+	Obviously, if two vertices are connected in $T_c$, they are connected in $G_c$, since $T_c$ is in $G_c$.\\
+	Suppose u,v are connected in $G_c$, but not connected in $T_c$. Let two connected components in $T_c$ contain u and v respectively be A and B. Let e be an edge in $G_c$ that connect A and B. Using defination, $w(e)\leq c$. Since A and B are not connected in $T_c$, there must be an edge e' in T that connects A and B, and $w(e')>c$. So, e'>e. Obviously T which contains e' is not the minimum spanning tree, since e' can be replaced by e with less weight. This contradicts the condition. So, if two vertices are connected in $G_c$, they are connected in $T_c$.\par 
     
 	\textbf{Question:}\par
-	
+	\textbf{1.}  In Exercise 7.11 \& 7.12, how can we compute the number of functions with a core of size $k$? $(1\leq k\leq n)$
+
+
 
 \end{document}
 	
