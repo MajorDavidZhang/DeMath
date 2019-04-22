@@ -76,6 +76,76 @@
 	\textbf{Exercise 7.10}\par
 	Suppose there are two minimum spanning tree , sort by the weight of $T's$ edges and $T\prime's$ edges , we have$(a1,a2,a3,\cdots,a_{n-1})$ , $(b1,b2,b3,\cdots,b_{n-1})$.$\exists i,a_i \ne b_i$,based on the $7.9$,the ordered edge weight list of any two minimum spanning trees is the same,so $w(a_i)=w(b_i)$.But no two edges of $G$ have the same weight , so there is contradiction . So $G$ has exactly one minimum spanning tree!
     
+    	\textbf{Exercise 7.13}\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.13.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	 
+	\textbf{Exercise 7.14}\par
+	The degree of vertex $i$ is equal to appearance times of $i$ in \textbf{p} plus one.\par
+	The nodes that don't appear in \textbf{p} are the leaves of $T$.\par
+	  
+	\textbf{Exercise 7.15}\par
+	1.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.15.1.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	2.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.15.2.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	3.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.15.3.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	4.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.15.4.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	5.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.15.5.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	6.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.6]{7.15.6.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	\textbf{Exercise 7.16}\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.1]{7.16.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	\textbf{Exercise 7.17}\par
+	Pr$[$u is a leaf in $T]=(\frac{n-1}{n})^{n-2}$\par
+	E$[$number of leaves$]=n\times(1-\frac{1}{n})^{n}\times (\frac{n}{n-1})^2$\par
+	As $n\rightarrow\infty$, $(1-\frac{1}{n})^{n}\rightarrow\frac{1}{e}$,  $(\frac{n}{n-1})^2\rightarrow1$\par
+	Thus E$[$number of leaves$]=\frac{n}{e}$\par
+	\textbf{Exercise 7.18}\par
+	$u$ has degree $2$ means $u$ appear one time in code.\par
+	Pr$[u$ has degree $2]=(n-2)\times\frac{1}{n}\times(\frac{n-1}{n})^{n-3}=\frac{(n-2)(n-1)^{n-3}}{n^{n-2}}$\par
 	\textbf{Question:}\par
 	\textbf{1.}  In Exercise 7.11 \& 7.12, how can we compute the number of functions with a core of size $k$? $(1\leq k\leq n)$
 
