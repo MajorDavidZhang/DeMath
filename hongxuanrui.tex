@@ -10,7 +10,7 @@
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
-\title{CS499 Homework 7 (First Draft)}
+\title{CS499 Homework 3 (First Draft)}
 
 
 \author{
@@ -33,35 +33,18 @@
 \newcommand{\fix}{\marginpar{FIX}}
 \newcommand{\new}{\marginpar{NEW}}
 
+\newtheorem{theorem}{}
+
 %\nipsfinalcopy % Uncomment for camera-ready version
 
 \begin{document}
-
+	
+	
 	\maketitle
-	\textbf{Exercise 7.1}\par
-	\textbf{(1)}  Since e is in the minimum spanning tree, we split the minimum spanning tree into two components by deleting e. Let the vertices in the two components consist $S$ and $V\backslash S$ respectively. Since there is no circle in a tree, obviously e is the only edge which is good and cross this cut, which means no edge from X crosses this cut. \par
-	\textbf{(2)}  Suppose e is not the minimum weight edge crossing this cut, assume there is an edge e' which has less weight and crosses this cut. e' can replace e and consists a spanning tree with less weight. This means e is not in the minimum spanning tree, which means e is not good, which contradicts the condition.\par
-	\textbf{Exercies 7.4}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.6]{P1.png}
-		\caption{}
-		\label{fig:1}
-	\end{figure}
-
-	\textbf{Exercies 7.5}
-	Obviously, if two vertices are connected in $T_c$, they are connected in $G_c$, since $T_c$ is in $G_c$.\\
-	Suppose u,v are connected in $G_c$, but not connected in $T_c$. Let two connected components in $T_c$ contain u and v respectively be A and B. Let e be an edge in $G_c$ that connect A and B. Using defination, $w(e)\leq c$. Since A and B are not connected in $T_c$, there must be an edge e' in T that connects A and B, and $w(e')>c$. So, e'>e. Obviously T which contains e' is not the minimum spanning tree, since e' can be replaced by e with less weight. This contradicts the condition. So, if two vertices are connected in $G_c$, they are connected in $T_c$.\par 
-
-
+	
+	
 	\textbf{Exercise 7.8}\par
     As the picture shows , for $\forall c,m_c(T)=m_c(T\prime)$.
-    \begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.3]{p3.jpg}
-		\caption{}
-		\label{fig:2}
-	\end{figure}
 
   
 
@@ -75,12 +58,12 @@
 	
 	\textbf{Exercise 7.10}\par
 	Suppose there are two minimum spanning tree , sort by the weight of $T's$ edges and $T\prime's$ edges , we have$(a1,a2,a3,\cdots,a_{n-1})$ , $(b1,b2,b3,\cdots,b_{n-1})$.$\exists i,a_i \ne b_i$,based on the $7.9$,the ordered edge weight list of any two minimum spanning trees is the same,so $w(a_i)=w(b_i)$.But no two edges of $G$ have the same weight , so there is contradiction . So $G$ has exactly one minimum spanning tree!
-    
-	\textbf{Question:}\par
-	\textbf{1.}  In Exercise 7.11 \& 7.12, how can we compute the number of functions with a core of size $k$? $(1\leq k\leq n)$
 
 
 
-\end{document}
+
+
+	\textbf{Exercise 2.4}\par
 	
+\end{document}
 
