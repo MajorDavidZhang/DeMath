@@ -75,6 +75,13 @@
 	
 	\textbf{Exercise 7.10}\par
 	Suppose there are two minimum spanning tree , sort by the weight of $T's$ edges and $T\prime's$ edges , we have$(a1,a2,a3,\cdots,a_{n-1})$ , $(b1,b2,b3,\cdots,b_{n-1})$.$\exists i,a_i \ne b_i$,based on the $7.9$,the ordered edge weight list of any two minimum spanning trees is the same,so $w(a_i)=w(b_i)$.But no two edges of $G$ have the same weight , so there is contradiction . So $G$ has exactly one minimum spanning tree!
+	
+	\textbf{Exercise 7.11}\par
+	
+A function with a core of size 1 forms a rooted tree (the element in core is the root). There are $n^{n-2}$ trees we can form. For each tree we can choose any one of $n$ nodes to be the root, so there are totally $n \cdot n^{n-2}=n^{n-1}$ different rooted trees, which means there are $n^{n-1}$ such functions.\par
+	\textbf{Exercise 7.12}\par
+
+A function with a core of size 2 forms a tree whose head and but are connected. There are $n^{n-2}$ trees we can form. For each tree we can choose any one of $n-1$ edges to be the edge connecting the head and the but. Since the head's order number is smaller than but's,once we choose an edge, the head and but are fixed.So there are totally $(n-1) \cdot n^{n-2}=(n-1)\cdot n^{n-2}$ different rooted trees, which means there are $(n-1)\cdot n^{n-2}$ such functions.\par
     
     	\textbf{Exercise 7.13}\par
   	\begin{figure}[H]
