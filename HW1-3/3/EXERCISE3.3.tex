@@ -1,0 +1,150 @@
+\documentclass{article} % For LaTeX2e
+%\usepackage{nips15submit_e,times}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amssymb}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{CS499 Homework 3 (First Draft)}
+
+
+\author{
+	Intersteller\thanks{ Use footnote for providing further information
+		about author (webpage, alternative address)---\emph{not} for acknowledging
+		funding agencies.}
+	Department of Computer Science
+	Cranberry-Lemon University
+	Pittsburgh, PA 15213
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+	
+	
+	\maketitle
+	
+	\section{Fibonacci Numbers and Other Recurrences}
+	\subsection{Identities among the Fibonacci Numbers}
+	 \textbf{Exercise 3.1}\par
+	
+
+
+	\textbf{Exercise 3.2}\par
+	
+	\textbf{Exercise 3.3}\par
+	
+	\textbf{ 1.} there are 4 circumstances of last bit pair of $\{x\}$ and $\{y\}$ sequence, which are $\{0,0\},\{1,0\},\{0,1\} and \{1,1\}$.Assume the expectation of $T$ under each circumstance is $E_1,E_2,E_3,E_4$, we have
+    $$
+        \begin{cases}
+        E_1=1+\frac{1}{4}E_1+\frac{1}{4}E_2+\frac{1}{4}E_3+\frac{1}{4}E_4\\
+        E_2=1+\frac{1}{4}E_2+\frac{1}{4}E_4\\
+        E_3=1+\frac{1}{4}E_1+\frac{1}{4}E_2\\
+        E_4=1+\frac{1}{4}E_2\\
+        \end{cases}
+    $$
+	by solving the equations above, we get
+	\begin{equation*}
+	\begin{split}
+	E_1=\frac{384}{121}\\
+	E_2=\frac{20}{11}\\
+	E_3=\frac{272}{121}\\
+	E_4=\frac{16}{11}
+	\end{split}
+	\end{equation*}
+	so we get $E[T]$:\\
+	$E[T]=\frac{1}{4}(E_1+E_2+E_3+E_4) = \frac{384}{121} $\\
+	\textbf{ 2.}
+	
+	\textbf{(a)}similar to the solution above,Assume the prabability of the event "10 appears in x before 11 appears in y" under each circumstance is $Pra_1,Pra_2,Pra_3,Pra_4$, we have
+	$$
+	\begin{cases}
+	Pra_1=\frac{1}{4}Pra_1+\frac{1}{4}Pra_2+\frac{1}{4}Pra_3+\frac{1}{4}Pra_4\\
+	Pra_2=\frac{1}{2}+\frac{1}{4}Pra_2+\frac{1}{4}Pra_4\\
+	Pra_3=\frac{1}{4}Pra_1+\frac{1}{4}Pra_2\\
+	Pra_4=\frac{1}{4}+\frac{1}{4}Pra_2\\
+	\end{cases}
+	$$
+	by solving the equations above, we get
+	\begin{equation*}
+	\begin{split}
+	Pra_1=\frac{65}{121}\\
+	Pra_2=\frac{41}{121}\\
+	Pra_3=\frac{9}{11}\\
+	Pra_4=\frac{5}{11}
+	\end{split}
+	\end{equation*}
+	so we get $Pra$:\\
+	$Pra=\frac{1}{4}(Pra_1+Pra_2+Pra_3+Pra_4) = \frac{65}{121} $\\
+	
+	\textbf{(b)}similar to the solution above,Assume the prabability of the event "10 appears in x at the same time with 11 appears in y" under each circumstance is $Prb_1,Prb_2,Prb_3,Prb_4$, we have
+	$$
+	\begin{cases}
+	Prb_1=\frac{1}{4}Prb_1+\frac{1}{4}Prb_2+\frac{1}{4}Prb_3+\frac{1}{4}Prb_4\\
+	Prb_2=\frac{1}{4}Prb_2+\frac{1}{4}Prb_4\\
+	Prb_3=\frac{1}{4}Prb_1+\frac{1}{4}Prb_2\\
+	Prb_4=\frac{1}{4}+\frac{1}{4}Prb_2\\
+	\end{cases}
+	$$
+	by solving the equations above, we get
+	\begin{equation*}
+	\begin{split}
+	Prb_1=\frac{17}{121}\\
+	Prb_2=\frac{7}{121}\\
+	Prb_3=\frac{1}{11}\\
+	Prb_4=\frac{3}{11}
+	\end{split}
+	\end{equation*}
+	so we get $Prb$:\\
+	$Prb=\frac{1}{4}(Prb_1+Prb_2+Prb_3+Prb_4) = \frac{17}{121} $\\
+	
+	\textbf{(c)}similar to the solution above,Assume the prabability of the event "10 appears in x after 11 appears in y" under each circumstance is $Prc_1,Prc_2,Prc_3,Prc_4$, we have
+	$$
+	\begin{cases}
+	Prc_1=\frac{1}{4}Prc_1+\frac{1}{4}Prc_2+\frac{1}{4}Prc_3+\frac{1}{4}Prc_4\\
+	Prc_2=\frac{1}{4}Pra_2+\frac{1}{4}Pra_4\\
+	Prc_3=\frac{1}{2}+\frac{1}{4}Prc_1+\frac{1}{4}Prc_2\\
+	Prc_4=\frac{1}{4}+\frac{1}{4}Prc_2\\
+	\end{cases}
+	$$
+	by solving the equations above, we get
+	\begin{equation*}
+	\begin{split}
+	Prc_1=\frac{39}{121}\\
+	Prc_2=\frac{73}{121}\\
+	Prc_3=\frac{1}{11}\\
+	Prc_4=\frac{3}{11}
+	\end{split}
+	\end{equation*}
+	so we get $Prc$:\\
+	$Prc=\frac{1}{4}(Prc_1+Prc_2+Prc_3+Prc_4) = \frac{39}{121} $\\
+
+
+
+
+	\textbf{Exercise 3.4}\par
+
+
+
+
+
+
+	
+\end{document}
+

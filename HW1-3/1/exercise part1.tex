@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amscd,amsbsy,amssymb,latexsym,url,bm,amsthm}
+\usepackage{epsfig,graphicx}
+\usepackage{enumitem,balance}
+\usepackage{wrapfig}
+\usepackage{mathrsfs,euscript}
+\usepackage[usenames]{xcolor}
+\usepackage{hyperref}
+\usepackage[vlined,ruled,linesnumbered]{algorithm2e}
+\hypersetup{colorlinks=true,linkcolor=black}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{solution}{Solution}
+\newtheorem{definition}{Definition}
+\theoremstyle{definition}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\newcommand{\postscript}[2]
+{\setlength{\epsfxsize}{#2\hsize}
+	\centerline{\epsfbox{#1}}}
+
+\renewcommand{\baselinestretch}{1.0}
+
+\setlength{\oddsidemargin}{-0.365in}
+\setlength{\evensidemargin}{-0.365in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{10.1in}
+\setlength{\textwidth}{7in}
+\makeatletter \renewenvironment{proof}[1][Proof] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse} \makeatother
+\makeatletter
+\renewenvironment{solution}[1][Solution] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse} \makeatother
+
+\begin{document}
+	\noindent
+	
+	%========================================================================
+	\noindent\framebox[\linewidth]{\shortstack[c]{
+			\Large{\textbf{Homework }}\vspace{1mm}\\
+			CS214-Algorithm and Complexity, Xiaofeng Gao, Spring 2019.}}
+	\begin{center}
+		
+		
+		\footnotesize{\color{blue}$*$ Name:He Xiaosheng \quad Student ID:517030910263\quad Email:xsheict@hotmail.com}
+	\end{center}
+	
+	\begin{enumerate}
+		\item
+		Exercise 1.2
+		\begin{proof}
+			Based on the previous question, we have known that it is an essential requirement that the number of yellow squares and black squares must be the same.\\
+			Step 1: Let's consider the part with a red circle. In the red circle, there are 5 yellow squares and 6 black squares. So we must add a yellow square to this part in order to reach a balance. There is only one yellow square meeting the requirement, as is marked with a green circle in Fig.1.And the black square marked with star must be excluded from the red area.\\
+			Step 2: Based on the previous discussion, the area below the red circle can be only filled in this way, as is shown in Fig.2 . However, the two black squares marked with triangle both need the yellow square marked with circle. So there is no solution for this chessboard.
+		\end{proof}
+		
+		\item
+		Exercise 1.5
+		\begin{proof}
+			As we have proved in Exercise 1.7 that we cannot form a larger square, of course we cannot form a square of side length 2.
+		\end{proof}
+		
+		\item
+		Exercise 1.7
+		\begin{proof}
+			As we can see from the jumping rule, if coin A jumps to a new place via coin B, we let coin A jumps again via coin B. It is clear that coin A will come back to its original place.\\
+			So if we have a method to form a larger square with side length $L$ ($L>1$), then we can form a $1-length$ square from $L-length$ square ($L>1$) by reversing the jumping order. Then we will prove that there is no way to form a $1-length$ square from L-length square ($L>1$).\\
+			We design a rectangular coordinate system, and in the beginning, the four coins are at $(0,0) (0,L) (L,0) (L,L)$ respectively. The four $x-coordinates$ and four $y-coordinates$ are all integral multiple of L. In one jump, let's suppose coin A at $(x_1 \cdot L,y_1 \cdot L)$ jumping via coin B at $(x_2 \cdot L,y_2 \cdot L)$, in which $x_1$, $x_2$, $y_1$, $y_2$ are all integers. Then coin A reaches ($(2 x_2-x_1)\cdot L,(2 y_2 - y_1)\cdot L$), which coordinates are also integral multiple of L. So every coin can only exist in coordinates with integral multiple of L. It means that unless some coins are at the same position, the least distance between two coins is $L$ ($L>1$). So we cannot form a $1-length$ square.
+		\end{proof}
+		
+		\item
+		Exercise 3.1
+		\begin{proof}
+			We give the following example:
+			$$A1=\{1,2,3,4,5,6\}$$
+			$$A2=\{4,5,6,7,8,9\}$$
+			$$A3=\{2,3,4,7,8,10\}$$
+			$$A4=\{1,2,5,7,9,10\}$$
+			Let's check it.
+			$$A1 \cap A2=\{4,5,6\}	, A1 \cap A3=\{2,3,4\} ,	A1 \cap A4=\{1,2,5\}$$
+			$$A2 \cap A3=\{4,7,8\}	, A2 \cap A4=\{5,7,9\} ,	A3 \cap A4=\{2,7,10\}$$
+			These pairwise intersections all have 3 elements.
+			$$A1 \cap A2 \cap A3=\{4\}	, A1 \cap A2 \cap A4=\{5\}$$
+			$$A1 \cap A3 \cap A4=\{2\}	, A2 \cap A3 \cap A4=\{7\}$$
+			These three-wise intersections all have 1 element.
+		\end{proof}
+		
+		\item
+		Exercise 3.2
+		\begin{proof}
+		We insist that $\mid A_i \mid =5$ for $i=1 ,2,3,4$.\\
+		According to The Exclusion-Inclusion Formula, each pairwise union has $5+5-3=7$ elements, \\
+		and each three-wise union has $5+5+5-3-3-3+1=7$ elements.\\
+		Let's take $A1$ for example. Obviously, $$A2 \cap A3 \in A1 \cup A2 \cup A3$$, and they have the same number of elements,\\
+		so $$A2 \cup A3 = A1 \cup A2 \cup A3$$. Then $$A1 \in A2 \cup A3$$.\\
+		Similarly, we can prove that $$A4 \in A2 \cup A3$$.\\
+		So $$A2 \cup A3=A1 \cup A2 \cup A3 \cup A4$$, $$A1 \cup A2 \cup A3 \cup A4$$ also has $7$ elements.\\
+		Without loss of generality, we suppose that\\
+		$$A1 \cup A2 \cup A3 \cup A4=\{1,2,3,4,5,6,7\}$$ and $$A1=\{1,2,3,4,5\}$$
+		In order to satisfy the requirement that all pairwise intersections\\
+		have size $3$, each of $A2$, $A3$, $A4$ must have only $3$ elements in $\{1,2,3,4,5\}$, \\so they must include $\{6,7\}$ (each set has size $5$).\\
+		Then $$\{6,7\} \in A2 \cup A3 \cup A4$$, $$ \mid A2 \cup A3 \cup A4 \mid \ge 2$$, which contradicts the requirement that all three-wise intersections have size $1$.\\
+		So if we insist that $$ \mid A_i\mid  = 5$$ for all $i$, then the task of Exercise 3.1 cannot be solved.
+		\end{proof}
+		
+	\end{enumerate}
+	
+	\vspace{20pt}
+	
+	
+	
+	%========================================================================
+\end{document}
