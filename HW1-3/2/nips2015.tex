@@ -1,0 +1,139 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips15submit_e,times}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amssymb}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{CS499 Homework 2 (First Draft)}
+
+
+\author{
+	Intersteller\thanks{ Use footnote for providing further information
+		about author (webpage, alternative address)---\emph{not} for acknowledging
+		funding agencies.}
+	Department of Computer Science
+	Cranberry-Lemon University
+	Pittsburgh, PA 15213
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+	
+	
+	\maketitle
+	
+	\section{Fibonacci Numbers and Other Recurrences}
+	\subsection{Identities among the Fibonacci Numbers}
+	\textbf{Exercise 2.1}\par
+	
+
+
+
+	\textbf{Exercise 2.2}\par
+
+
+
+
+
+
+	
+	
+
+
+
+	
+	\subsection{General Linear Recurrences}
+	\textbf{Exercise 2.3}\par
+	\textbf{solution 1:}\par
+	For each eigenvalue of A, we have $|\lambda I-A|=0$, which is
+	$$
+ \begin{vmatrix}
+   \lambda -a_1 & -a_2 & -a_3 & \cdots &-a_{k-1} & -a_k \\
+   -1 & \lambda & 0 & \cdots & 0 & 0 \\
+   0 & -1 & \lambda & \cdots & 0 & 0 \\
+   \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+   0 & 0 & 0 & \cdots & \lambda & 0\\
+   0 & 0 & 0 & \cdots & -1 & \lambda\\
+  \end{vmatrix}
+$$
+
+	Let 
+	$$ row_{k-1} + \frac{1}{\lambda} row_k \rightarrow row_{k-1}$$
+	$$row_{k-2} +\frac{1}{\lambda} row_{k-1} \rightarrow row_{k-2}$$
+	$$\vdots$$
+	$$row_1+\frac{1}{\lambda}row_2 \rightarrow row_1$$
+	We get 
+	$$
+ \begin{vmatrix}
+   \lambda -a_1-\frac{a_2}{\lambda}-\cdots - \frac{a_k}{\lambda ^{k-1}} & \cdots & \cdots & \cdots & \cdots  \\
+   0 & \lambda & 0 & \cdots & \cdots \\
+   0 & 0 & \lambda & \cdots & \cdots \\
+   \vdots & \vdots & \vdots & \ddots & \vdots \\
+   0 & 0 & 0 & \cdots & \lambda \\
+  \end{vmatrix}=0
+$$
+$$\Rightarrow (\lambda -a_1-\frac{a_2}{\lambda}-\cdots - \frac{a_k}{\lambda ^{k-1}})\dot \lambda^{k-1}=0$$
+$$\Rightarrow \lambda^{k}=a_1 \lambda^{k-1}+a_2 \lambda^{k-2}+\cdots + a_{k-1}\lambda +a_k $$
+
+\textbf{solution 2:}\par
+We suppose that for each enigenvalue $\lambda$, the enigenvector is
+$$\begin{pmatrix}
+\lambda^{k-1}\\
+\lambda^{k-2}\\
+\vdots\\
+1
+\end{pmatrix}
+$$
+Thus,$$
+A\alpha = \begin{pmatrix}
+a_1 \lambda^{k-1}+a_2\lambda^{k-2}+\cdots +a_k\\
+\lambda^{k-1}\\
+\vdots\\
+\lambda
+\end{pmatrix}
+$$
+
+$$\lambda \alpha = \begin{pmatrix}
+\lambda^{k}\\
+\lambda^{k-1}\\
+\vdots\\
+\lambda
+\end{pmatrix}$$
+
+According to the definition of enigenvalue, $A\alpha =\lambda \alpha$. So, if $\lambda^{k}=a_1 \lambda^{k-1}+a_2 \lambda^{k-2}+\cdots + a_{k-1}\lambda +a_k$  \textbf{(1)}, $\lambda$ is an eigenvalue of A, and 
+$\alpha= \begin{pmatrix}
+\lambda^{k-1}\\
+\lambda^{k-2}\\
+\vdots\\
+1
+\end{pmatrix}
+$ is its corresponding eigenvector.\par
+Also, n-dimension matrix has n eigenvalues, and equation \textbf{(1)} has n roots. So, $\lambda$ is an eigenvalue of A if and only if equation \textbf{(1)} is satisfied. 
+
+
+
+
+
+
+	\textbf{Exercise 2.4}\par
+	
+\end{document}
+

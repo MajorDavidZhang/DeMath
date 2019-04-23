@@ -1,0 +1,213 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips15submit_e,times}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amssymb}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{CS499 Homework 2}
+
+
+\author{
+	Intersteller\thanks{ Use footnote for providing further information
+		about author (webpage, alternative address)---\emph{not} for acknowledging
+		funding agencies.}
+	Department of Computer Science
+	Cranberry-Lemon University
+	Pittsburgh, PA 15213
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+	
+	
+	\maketitle
+	
+	\section{Fibonacci Numbers and Other Recurrences}
+	\subsection{Identities among the Fibonacci Numbers}
+	\textbf{Exercise 2.1}\par
+	\textbf{Proof 1.} We use induction on n.\par
+    $(1)$ Basic step. $n=1$, $F_1=F_3-1$. It is obviously true.\par
+    $(2)$ Induction hypothesis. Assume it holds for n $(n \ge 1)$. Then we have
+    $$
+    F_1+F_2+F_3+\cdots+F_n=F_{n+2}-1
+    $$
+    $(3)$ Proof of induction step. Now let us prove that based on the induction hypothesis, we can get the same formula for $n+1$.
+    $$
+    F_1+F_2+F_3+\cdots+F_n+F_{n+1}=F_{n+2}-1+F_{n+1}=F_{n+3}-1=F_{(n+1)+2}-1
+    $$
+    \textbf{Proof 2.} We use a combinatorial argument involving the sets $A_i$.\par
+    Since $F_{n}=\mid A_{n+2} \mid$, where $A_{n} = \{x\epsilon{\{0,1\}}^{n}\mid$ $x$ does not contain 11$\}$.We consider $A_{n}$.\par
+    Each element in $A_{n}$ is a  $n$-bit 01 string and each bit is 0 or 1. Thus, we have
+    $$
+	A_{n}=0A_{n-1}\cup1B_{n-1}
+	$$
+    where $B_{n-1}=0A_{n-2}$. Obviously, $0A_{n-1}\cap10A_{n-2}=\emptyset$ for every integer $n \ge 2$.\par
+	Then we find a way to partition $A_{n}$ like this.\par
+	$$A_{n}=0A_{n-1}\cup1B_{n-1}$$
+	$$A_{n}=00A_{n-2}\cup010A_{n-3}\cup10A_{n-2}$$
+	$$A_{n}=000A_{n-3}\cup0010A_{n-4}\cup010A_{n-3}\cup10A_{n-2}$$
+    $$A_{n}=0000A_{n-4}\cup00010A_{n-5}\cup0010A_{n-4}\cup010A_{n-3}\cup10A_{n-2}$$
+	$$\cdots$$
+	$$\cdots$$
+    $$A_{n}=\{\underbrace{000\cdots00}_{\text{n}},\underbrace{000\cdots0}_{\text{n-1}}1,\underbrace{000\cdots0}_{\text{n-2}}10\}\cup\underbrace{000\cdots10}_{\text{n-1}}A_1\cup\cdots\cup00010A_{n-5}\cup0010A_{n-4}\cup010A_{n-3}\cup10A_{n-2}$$
+    The intersection of any two sets on the right side of the equation is an empty set.\par
+    So we have
+    $$
+    \mid A_{n} \mid=3+\mid A_1 \mid+\cdots+\mid A_{n-4} \mid+\mid A_{n-3} \mid+\mid A_{n-2}\mid
+    $$
+	Since $F_{n+2}=\mid A_{n} \mid$ for every integer $n\ge1$ and $F_1=1$, we have
+	$$
+    F_{n+2}-1=\sum_{i=3}^{n}F_i+F_1+F_2
+	$$
+    So we have
+    $$
+    F_{n+2}-1=\sum_{i=1}^{n}F_i
+    $$.
+
+
+	\textbf{Exercise 2.2}\par
+	\textbf{Proof 1.} We use induction on n.\par
+	$(1)$ Basic step. $n=1$, $F_1+F_3=1+2=3=F_4$. It is obviously true.\par
+	$(2)$ Induction hypothesis. Assume it holds for n $(n \ge 1)$. Then we have
+	$$
+	F_1+F_3+F_5+\cdots+F_{2n+1}=F_{2n+2}
+	$$
+	$(3)$ Proof of induction step. Now let us prove that based on the induction hypothesis, we can get the same formula for $n+1$.
+	$$
+	F_1+F_3+F_5+\cdots+F_{2n+1}+F_{2(n+1)+1}=F_{2n+2}+F_{2n+3}=F_{2(n+1)+2}
+	$$
+	\textbf{Proof 2.} We use a combinatorial argument involving the sets $A_i$.\par
+	Since $F_{2n+2}=\mid A_{2n} \mid$, where $A_{2n} = \{x\epsilon{\{0,1\}}^{2n}\mid$ $x$ does not contain 11$\}$.We consider $A_{2n}$.\par
+	Each element in $A_{2n}$ is a  $2n$-bit 01 string and each bit is 0 or 1. Thus, we have
+	$$
+	A_{2n}=0A_{2n-1}\cup1B_{2n-1}
+	$$
+	where $B_{2n-1}=0A_{2n-2}$. Obviously, $0A_{2n-1}\cap10A_{2n-2}=\emptyset$ for every integer $n \ge 1$.\par
+	Then we find a way to partition $A_{2n}$ like this.\par
+	$$ A_{2n}=0A_{2n-1}\cup1B_{2n-1}$$
+	$$A_{2n}=0A_{2n-1}\cup100A_{2n-3}\cup101B_{2n-3}$$
+	$$A_{2n}=0A_{2n-1}\cup100A_{2n-3}\cup10100A_{2n-5}\cup10101B_{2n-5}$$
+	$$\cdots$$
+	$$\cdots$$
+	$$A_{2n}=0A_{2n-1}\cup100A_{2n-3}\cup10100A_{2n-5}\cup1010100A_{2n-7}\cup\cdots\cup\underbrace{1010\cdots10}_{\text{2n-2}}0A_1\cup\underbrace{1010\cdots1010}_{\text{2n}}$$
+	Since $F_{n+2}=\mid A_{n} \mid$ for every integer $n\ge1$ and $F_1=1$, we have
+	$$
+	F_{2n+2}=F_{2n+1}+F_{2n-1}+F_{2n-3}+\cdot+F_3+F_1
+	$$.
+	\subsection{General Linear Recurrences}
+	\textbf{Exercise 2.3}\par
+	\textbf{solution 1:}\par
+	For each eigenvalue of A, we have $|\lambda I-A|=0$, which is
+	$$
+ \begin{vmatrix}
+   \lambda -a_1 & -a_2 & -a_3 & \cdots &-a_{k-1} & -a_k \\
+   -1 & \lambda & 0 & \cdots & 0 & 0 \\
+   0 & -1 & \lambda & \cdots & 0 & 0 \\
+   \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+   0 & 0 & 0 & \cdots & \lambda & 0\\
+   0 & 0 & 0 & \cdots & -1 & \lambda\\
+  \end{vmatrix}
+$$
+
+	Let
+	$$ column_{k-1} + \frac{1}{\lambda} column_k \rightarrow column_{k-1}$$
+	$$column_{k-2} +\frac{1}{\lambda} column_{k-1} \rightarrow column_{k-2}$$
+	$$\vdots$$
+	$$column_1+\frac{1}{\lambda}column_2 \rightarrow column_1$$
+	We get
+	$$
+ \begin{vmatrix}
+   \lambda -a_1-\frac{a_2}{\lambda}-\cdots - \frac{a_k}{\lambda ^{k-1}} & \cdots & \cdots & \cdots & \cdots  \\
+   0 & \lambda & 0 & \cdots & \cdots \\
+   0 & 0 & \lambda & \cdots & \cdots \\
+   \vdots & \vdots & \vdots & \ddots & \vdots \\
+   0 & 0 & 0 & \cdots & \lambda \\
+  \end{vmatrix}=0
+$$
+$$\Rightarrow (\lambda -a_1-\frac{a_2}{\lambda}-\cdots - \frac{a_k}{\lambda ^{k-1}})\dot \lambda^{k-1}=0$$
+$$\Rightarrow \lambda^{k}=a_1 \lambda^{k-1}+a_2 \lambda^{k-2}+\cdots + a_{k-1}\lambda +a_k $$
+
+\textbf{solution 2:}\par
+We suppose that for each enigenvalue $\lambda$, the enigenvector is
+$$\begin{pmatrix}
+\lambda^{k-1}\\
+\lambda^{k-2}\\
+\vdots\\
+1
+\end{pmatrix}
+$$
+Thus,$$
+A\alpha = \begin{pmatrix}
+a_1 \lambda^{k-1}+a_2\lambda^{k-2}+\cdots +a_k\\
+\lambda^{k-1}\\
+\vdots\\
+\lambda
+\end{pmatrix}
+$$
+
+$$\lambda \alpha = \begin{pmatrix}
+\lambda^{k}\\
+\lambda^{k-1}\\
+\vdots\\
+\lambda
+\end{pmatrix}$$
+
+According to the definition of enigenvalue, $A\alpha =\lambda \alpha$. So, if $\lambda^{k}=a_1 \lambda^{k-1}+a_2 \lambda^{k-2}+\cdots + a_{k-1}\lambda +a_k$  \textbf{(1)}, $\lambda$ is an eigenvalue of A, and
+$\alpha= \begin{pmatrix}
+\lambda^{k-1}\\
+\lambda^{k-2}\\
+\vdots\\
+1
+\end{pmatrix}
+$ is its corresponding eigenvector.\par
+Also, n-dimension matrix has n eigenvalues, and equation \textbf{(1)} has n roots. So, $\lambda$ is an eigenvalue of A if and only if equation \textbf{(1)} is satisfied.
+
+
+
+
+
+
+
+	\textbf{Exercise 2.4}\par
+    \textbf{Proof }\\
+    when $\lambda$ is bigger than $0$, We can rewrite the formula as follows\\
+    $$
+    \frac{a_1}{\lambda} +\frac{a_2}{\lambda^{2}} +\dots + \frac{a_{k-2}}{\lambda^{k-2}} + \frac{a_{k-1}}{\lambda^{k-1}} + \frac{a_k}{\lambda^k} -1=0,a_i \ge 0
+    $$
+    let $f(\lambda)=\frac{a_1}{\lambda} +\frac{a_2}{\lambda^{2}} +\dots + \frac{a_{k-2}}{\lambda^{k-2}} + \frac{a_{k-1}}{\lambda^{k-1}} + \frac{a_k}{\lambda^k} -1 $\\
+    notice that in the area $(0,\inf)$,$f$ is a monotone decreasing continuous function of $\lambda$ (when $\lambda>0$),and we have\\
+    $$
+    f(1)=a_1+a_2+\dots+a_k-1>0
+    $$
+    $$
+    f(\infty)\to -1<0
+    $$
+    according to the existence theorem of zero point of continuous function, there exists a $\lambda \in (1,\infty)$ such that $f(\lambda)=0$\\
+    according to the monotonicity of the function, there exists exactly one such $\lambda$
+
+
+\section{Question}
+\subsection{}When we read the notes on discrete probability, we think about Exercise 3.1: when does the first 11/10 appear? We simulate the proof 3 and get the answer that averagely it takes 6 digits when first 11 appears and for 10 the answer is 4. Then we think further about when does the $k^{th}$ 11/10 appear? For 10, obviously, each appearance of 10 is independent, so the answer should be 4k. But for 11, the continuous appearance may not be independent. For example, in 1111, 11 appears 3 times. So we want to know when the $k^{th}$ 11 appears averagely? 
+\subsection{}In the previous lectures, we find that many proofs are based on visualized or concretized approach. Do we have some general thinking or method for discrete mathematics? 
+
+
+\end{document}
+
