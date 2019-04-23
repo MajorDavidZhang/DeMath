@@ -51,7 +51,7 @@
 
 	\textbf{Exercies 7.5}
 	Obviously, if two vertices are connected in $T_c$, they are connected in $G_c$, since $T_c$ is in $G_c$.\\
-	Suppose u,v are connected in $G_c$, but not connected in $T_c$. Let two connected components in $T_c$ contain u and v respectively be A and B. Let e be an edge in $G_c$ that connect A and B. Using defination, $w(e)\leq c$. Since A and B are not connected in $T_c$, there must be an edge e' in T that connects A and B, and $w(e')>c$. So, e'>e. Obviously T which contains e' is not the minimum spanning tree, since e' can be replaced by e with less weight. This contradicts the condition. So, if two vertices are connected in $G_c$, they are connected in $T_c$.\par 
+	Suppose u,v are connected in $G_c$, but not connected in $T_c$. Let two connected components in $T_c$ contain u and v respectively be A and B. Let e be an edge in $G_c$ that connect A and B. Using defination, $w(e)\leq c$. Since A and B are not connected in $T_c$, there must be an edge e' in T that connects A and B, and $w(e')>c$. So, e'>e. Obviously T which contains e' is not the minimum spanning tree, since e' can be replaced by e with less weight. This contradicts the condition. So, if two vertices are connected in $G_c$, they are connected in $T_c$.\par
 
 
 	\textbf{Exercise 7.8}\par
@@ -63,18 +63,16 @@
 		\label{fig:2}
 	\end{figure}
 
-  
+
 
 	\textbf{Exercise 7.9}\par
-    Sort by the weight of $T's$ edges and $T\prime's$ edges , we have $(a1,a2,a3,\cdots,a_{n-1})$ , $(b1,b2,b3,\cdots,b_{n-1})$ . Suppose $a_i\ne b_i$ , $\forall k<i,a_k=b_k$ and $w(a_i)\geq w(b_i)$ , there are two situations:\par
-    $(1)$ edge $b_i$ exists in the $T$ , then we can find $j(j>i)$ and $a_j=b_i$ . Because $w(b_i)=w(a_j)\geq w(a_i)\geq w(b_i) , w(a_i)=w(b_i)=w(a_j) . $So we can exchange $a_i$ and $a_j$ and new sequence is still ordered . $T's$ and $T\prime's$ i position is the same edge.\par
-    $(2)$ edge $b_i$ doesn't exist in the $T$ , then we add $b_i$ to $T$ to form a cycle . Because $T$ is a minimum spanning tree , $w$(edge in the cycle)$\leq w(b_i)$ . And we can find $a_j$($j>i$ and $a_j$ doesn't exist in the $T\prime$ and $a_j$ in the cycle) . Because $w(b_i)\geq w(a_j)\geq w(a_i) \geq w(b_i),w(b_i)=w(a_i)=w(a_j).$ So we can change $a_j$ with $b_i$ . Turn to the situation $(1)$.\par
-    So we know the ordered edge weight list of any two minimum spanning trees is the same.\par
-    Obviously, $m_c(T)=m_c(T\prime).$
+    Based on the $Lemma 7.3$ , $T_c$ , $T\prime_c$ and $G_c$ have exactly the same connected components. We suppose the number of the connected components is $k$. Obviously $T$ and $T\prime$ has the same number of edges. We suppose the number of the edges is $m$. A connected component will be added when a edge of a tree is deleted. So we delete the same number of edges k to get $T_c$ and $T\prime_c$. Now the number of edges of $T_c$ and $T\prime_c$ is $n-k$. So we have $m_c(T)=m_c(T\prime)$.
+
 
 	
 	\textbf{Exercise 7.10}\par
-	Suppose there are two minimum spanning tree , sort by the weight of $T's$ edges and $T\prime's$ edges , we have$(a1,a2,a3,\cdots,a_{n-1})$ , $(b1,b2,b3,\cdots,b_{n-1})$.$\exists i,a_i \ne b_i$,based on the $7.9$,the ordered edge weight list of any two minimum spanning trees is the same,so $w(a_i)=w(b_i)$.But no two edges of $G$ have the same weight , so there is contradiction . So $G$ has exactly one minimum spanning tree!
+	Suppose there are two minimum spanning tree , sort the weight of $T's$ edges and $T\prime's$ edges , we have$(a1,a2,a3,\cdots,a_{n-1})$ , $(b1,b2,b3,\cdots,b_{n-1})$.$\exists c = a_i < b_i$,then $m_c(T)=i\ne m_(T\prime)<i$.Based on the $7.3$,there is a contradiction . So $G$ has exactly one minimum spanning tree!
+
 	
 	\textbf{Exercise 7.11}\par
 	
@@ -82,7 +80,7 @@ A function with a core of size 1 forms a rooted tree (the element in core is the
 	\textbf{Exercise 7.12}\par
 
 A function with a core of size 2 forms a tree whose head and but are connected. There are $n^{n-2}$ trees we can form. For each tree we can choose any one of $n-1$ edges to be the edge connecting the head and the but. Since the head's order number is smaller than but's,once we choose an edge, the head and but are fixed.So there are totally $(n-1) \cdot n^{n-2}=(n-1)\cdot n^{n-2}$ different rooted trees, which means there are $(n-1)\cdot n^{n-2}$ such functions.\par
-    
+
     	\textbf{Exercise 7.13}\par
   	\begin{figure}[H]
   	\centering
@@ -90,11 +88,11 @@ A function with a core of size 2 forms a tree whose head and but are connected. 
   	\caption{}
   	\label{}
   	\end{figure}
-	 
+	
 	\textbf{Exercise 7.14}\par
 	The degree of vertex $i$ is equal to appearance times of $i$ in \textbf{p} plus one.\par
 	The nodes that don't appear in \textbf{p} are the leaves of $T$.\par
-	  
+	
 	\textbf{Exercise 7.15}\par
 	1.\par
   	\begin{figure}[H]
