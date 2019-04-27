@@ -39,6 +39,49 @@
 
 	\maketitle
 	\textbf{Exercise 8.1}\par
+	\quad 1.\par
+  	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.5]{8_1.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	\quad 2. The size of the largest chain is $4$.\par
+	 \quad 3. The size of the largest antichain is $7$.\par 
+	\textbf{Exercise 8.4}\par
+	We assume that $(\mathbb{N}_{0}^{n},\leq)$ has an infinite antichain $T$. Obviously, $T \subseteq  (\mathbb{N}_{0}^{n},\leq)$. 
+	According to \textbf{exercise 8.3}, we get $T$ contains an infinite chain, which contradicts $T$ is an infinite antichain. 
+	Thus $(\mathbb{N}_{0}^{n},\leq)$ has no infinite antichain.\par
+	\textbf{Exercise 8.5}\par
+	$n=2$\par
+	 \begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.5]{8_5_1.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	$n=3$\par
+	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.5]{8_5_2.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	\textbf{Exercise 8.6}\par
+	Maximum is $(\underbrace{1,1,1,\cdots,1}_{n})$\par
+	Minimum is $(\underbrace{0,0,0,\cdots,0}_{n})$\par
+	Maximal is  $(\underbrace{1,1,1,\cdots,1}_{n})$\par
+	Minimal is $(\underbrace{0,0,0,\cdots,0}_{n})$\par
+	\textbf{Exercise 8.7}\par
+	We construct the Hasse diagrams like \textbf{Exercise 8.5}. 
+	The first layer is an element with $n$ one. The second layer is $n$ elements with $n-1$ one.
+	The third layer is $\binom{2}{n}$ elements with $n-2$ one......The $k$ layer is $\binom{k-1}{n}$ elements with $n+1-k$ one, where $1\leq k\leq n+1$.\par
+	Obviously elements in the same layer is antichain, since elements in chain must have different numbers of one and in the same layer the number of one is equivalent.
+	Thus it has $n+1$ antichain partition.\par
+	According to Mirsky's Theorem, max size of chain$=$min size of antichain partition. It means max size of chain must less than or equal to the size of each antichain partition. 
+	Thus the longest chain of ${\{0,1\}}^n$ $\leq n+1$. Since we get $n+1$ antichain partition in above Hasse diagrams, then the longest chain of ${\{0,1\}}^n$ is $n+1$.\par 
+	
+
 	
 
 
