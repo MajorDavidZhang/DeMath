@@ -48,6 +48,33 @@
   	\end{figure}
 	\quad 2. The size of the largest chain is $4$.\par
 	 \quad 3. The size of the largest antichain is $7$.\par 
+
+\textbf{Exercise 8.2}\par
+    $1.(1,1,1,1,1,\cdots)$ are minimal. There is not a maximum.\par
+    $2.$There is a minimum, but there is not a maximum.\par
+    $3.$Yes. For example,\par
+    $$(1,1,1,1,\cdots)$$
+    $$(2,1,1,1,\cdots)$$
+    $$(3,1,1,1,\cdots)$$
+    $$(4,1,1,1,\cdots)$$
+    $$\vdots$$
+    $4.$Yes.For example.\par
+    $$(1,2,3,\cdots,k)$$
+    $$(2,1,3,\cdots,k)$$
+    $$(2,3,1,\cdots,k)$$
+    $$\vdots$$
+    $$(2,3,4,\cdots,k,1)$$
+
+	\textbf{Exercise 8.3}\par
+    Yes. We prove it by mathematical induction.\par
+    $(1)$When $n=1$, obviously, we can sort elements from small to large to get an infinite chain.\par
+    $(2)$We suppose every infinite subset $S \subseteq N_0^N$ contain an infinite chain, then when $n=N+1$, we can take the first element of each set to constitute a sequence and sort the sequence from small to large. There are two situations:\par
+    $1.$The sequence is bounded.\par
+    Obviously at least one element we call it $a$ has appeared countless times. Based on the inductive assumption, we can find an infinite chain in all sets whose first element is $a$ and whose $a$ is removed. Then we add $a$ back to these sets which constitute the infinite chain to get the final infinite chain.\par
+    $2.$The sequence is unbounded.\par
+    We take the set $A$ whose first element is smallest in this sequence as the first set in the chain. Based on the inductive assumption, we can find an infinite chain contained this set which remove the first element in all sets removing their first elements. Obviously the successor of the set $A$ removing its first element in this chain will be the successor of $A$ in the final chain if it adds its first element and we call it $B$. In the sorted sequence, there are infinite elements after the first element of $B$ and we can find an infinite chain in the sets contained these elements as their first elements and removing their first elements. So we can find the successor of $B$ in the final chain. And so on, we get an infinite chain when $n=N+1$.\par
+    So every infinite subset $S \subseteq N_0^n$ contain an infinite chain.
+
 	
 	
 	\textbf{Exercise 8.4}\par
