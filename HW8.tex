@@ -48,6 +48,8 @@
   	\end{figure}
 	\quad 2. The size of the largest chain is $4$.\par
 	 \quad 3. The size of the largest antichain is $7$.\par 
+	
+	
 	\textbf{Exercise 8.4}\par
 	We assume that $(\mathbb{N}_{0}^{n},\leq)$ has an infinite antichain $T$. Obviously, $T \subseteq  (\mathbb{N}_{0}^{n},\leq)$. 
 	According to \textbf{exercise 8.3}, we get $T$ contains an infinite chain, which contradicts $T$ is an infinite antichain. 
@@ -84,8 +86,24 @@
 
 	
 
-
+	\textbf{Exercise 8.8}\par
+	 The largest antichain of $\{0,1\}^n$ is $(_{[n/2]}^n)$.According to the Dilworth Theorem,the largest antichain equals to the minimum size of chain partition.\par
+	 We define a layer as a set of strings containing same number of $'1'$ and is sorted by how many  $'1'$ a string in this layer contains.\par 
+	 \textbf{1.}There are $(_{[n/2]}^n)$ strings in the middle layer, which has the most strings. Since any two strings from the same layer are not comparable, there are at least $(_{[n/2]}^n)$ chain partitions.\par
+	 \textbf{2.} All strings in any layer except the middle one can form chains with unique strings in its adjacent layer with the following method:\par
+	 Assuming there are more $'1'$ than $'0'$ in this layer, we calculate a strings score by the following rules: scan the string from the beginning and the initial score is $0$, add one if current digit is $1$,minus one otherwise. Find the digit where the first highest score appears (which must be a $'1'$),change it to $0$. Then we get a string belongs to its adjacent layer and these two strings can form a chain(they are comparable).Now we prove that this string is unique:\par    
+	 Assume that there are two different strings that transform into a same string. Assume that the first string changes the i-th digit, and the other changes the j-th digit (with no loss of generality, assume $i<j$).  Then the i-th digit of the second string and the j-th digit of the first string are $0$, whereas other digits are the same. Assume that the score of the $(i-1)$-th digit is k.Then the score of the i-th digit is $k+1$ for the first string and $(k-1)$ for the second. Assume that the score of the $(j-1)$-th digit for the first string is $k+1+p$,then the score of the $(j-1)$-th digit for the second string is $k-1+p$.The score of the j-th digit for the second string is $k+p$. Since the changing digit is where the first largest score occurs, we have
+	 $$
+	 k+1 \ge k+1+p
+	 $$
+	 $$
+	 k<k+p
+	 $$
+	 where we get $p\geq 0$ and $p>0$ which contradict each other. So  different strings cannot transform into a same string by the method. Similarly, if there are more $'0'$ than $'1'$ in the layer,we can use a similar method to form chains with unique strings in its adjacent layer.  
+	 
 	\textbf{Question:}\par
+	\textbf{1}How to prove the proposition that the set of integer has the smallest cardinality among all the infinite sets?
+	\textbf{1}How to handle the Russell's paradox? 
 	
 
 
