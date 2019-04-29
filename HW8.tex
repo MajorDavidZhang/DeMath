@@ -106,13 +106,14 @@
 	Maximal is  $(\underbrace{1,1,1,\cdots,1}_{n})$\par
 	Minimal is $(\underbrace{0,0,0,\cdots,0}_{n})$\par
 	\textbf{Exercise 8.7}\par
-	We construct the Hasse diagrams like \textbf{Exercise 8.5}.
+	We construct the Hasse diagrams like \textbf{Exercise 8.5}. 
 	The first layer is an element with $n$ one. The second layer is $n$ elements with $n-1$ one.
-	The third layer is ${n \choose 2}$ elements with $n-2$ one......The $k$ layer is $\binom{n}{k-1}$ elements with $n+1-k$ one, where $1\leq k\leq n+1$.\par
+	The third layer is $\binom{n}{2}$ elements with $n-2$ one......The $k$ layer is $\binom{n}{k-1}$ elements with $n+1-k$ one, where $1\leq k\leq n+1$.\par
 	Obviously elements in the same layer is antichain, since elements in chain must have different numbers of one and in the same layer the number of one is equivalent.
 	Thus it has $n+1$ antichain partition.\par
-	According to Mirsky's Theorem, max size of chain$=$min size of antichain partition. It means max size of chain must less than or equal to the size of each antichain partition.
-	Thus the longest chain of ${\{0,1\}}^n$ $\leq n+1$. Since we get $n+1$ antichain partition in above Hasse diagrams, then the longest chain of ${\{0,1\}}^n$ is $n+1$.\par
+	According to Mirsky's Theorem, max size of chain$=$min size of antichain partition. It means max size of chain must less than or equal to the size of each antichain partition. 
+	Thus the longest chain of ${\{0,1\}}^n$ $\leq n+1$. Since we get $n+1$ antichain partition in above Hasse diagrams, then the longest chain of ${\{0,1\}}^n$ is $n+1$. 
+	For example, $(0,0,...,0), (0,0,...,1), (0,0,...,0,1),...,(1,1,...,1)$ is a chain with $n+1$ elements.\par
 	
 
 	
