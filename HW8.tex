@@ -47,7 +47,6 @@
   	\label{}
   	\end{figure}
 	\quad 2. The size of the largest chain is $4$.\par
-<<<<<<< HEAD
 	 \quad 3. The size of the largest antichain is $7$.\par
 
 \textbf{Exercise 8.2}\par
@@ -71,7 +70,7 @@
 	\textbf{Exercise 8.3}\par
     Yes. We prove it by mathematical induction.\par
     $(1)$When $n=1$, obviously, we can sort elements from small to large to get an infinite chain.\par
-    $(2)$We suppose every infinite subset $S \subseteq N_0^N$ contain an infinite chain, then when $n=N+1$, we can take the first element of each set to constitute a sequence and sort the sequence from small to large. There are two situations:\par
+    $(2)$We suppose every infinite subset $S \subseteq N_0^n$ contain an infinite chain, then when $n=N+1$, we can take the first element of each set to constitute a sequence and sort the sequence from small to large. There are two situations:\par
     $1.$The sequence is bounded.\par
     Obviously at least one element we call it $a$ has appeared countless times. Based on the inductive assumption, we can find an infinite chain in all sets whose first element is $a$ and whose $a$ is removed. Then we add $a$ back to these sets which constitute the infinite chain to get the final infinite chain.\par
     $2.$The sequence is unbounded.\par
@@ -109,7 +108,7 @@
 	\textbf{Exercise 8.7}\par
 	We construct the Hasse diagrams like \textbf{Exercise 8.5}.
 	The first layer is an element with $n$ one. The second layer is $n$ elements with $n-1$ one.
-	The third layer is $\binom{2}{n}$ elements with $n-2$ one......The $k$ layer is $\binom{k-1}{n}$ elements with $n+1-k$ one, where $1\leq k\leq n+1$.\par
+	The third layer is ${n \choose 2}$ elements with $n-2$ one......The $k$ layer is $\binom{n}{k-1}$ elements with $n+1-k$ one, where $1\leq k\leq n+1$.\par
 	Obviously elements in the same layer is antichain, since elements in chain must have different numbers of one and in the same layer the number of one is equivalent.
 	Thus it has $n+1$ antichain partition.\par
 	According to Mirsky's Theorem, max size of chain$=$min size of antichain partition. It means max size of chain must less than or equal to the size of each antichain partition.
@@ -133,9 +132,9 @@
 	 $$
 	 where we get $p\geq 0$ and $p>0$ which contradict each other. So  different strings cannot transform into a same string by the method. Similarly, if there are more $'0'$ than $'1'$ in the layer,we can use a similar method to form chains with unique strings in its adjacent layer.
 	
-	\textbf{Question:}\par
-	\textbf{1}How to prove the proposition that the set of integer has the smallest cardinality among all the infinite sets?
-	\textbf{1}How to handle the Russell's paradox?
+	\textbf{Question}\par
+	\textbf{1}How to prove the proposition that the set of integer has the smallest cardinality among all the infinite sets?\par
+	\textbf{2}How to handle the Russell's paradox?
 	
 
 
