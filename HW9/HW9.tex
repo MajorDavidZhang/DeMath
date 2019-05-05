@@ -1,0 +1,87 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips15submit_e,times}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amssymb}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{CS499 Homework 9 (First Draft)}
+
+
+\author{
+	Intersteller\thanks{ Use footnote for providing further information
+		about author (webpage, alternative address)---\emph{not} for acknowledging
+		funding agencies.}
+	Department of Computer Science
+	Cranberry-Lemon University
+	Pittsburgh, PA 15213
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\newtheorem{theorem}{}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+	
+	
+	\maketitle
+	
+	
+	\textbf{Exercise 9.1}\par
+    We define$f_1:N\rightarrow N$\par
+    $f_1\left(0\right)=0,
+    f_1\left(1\right)=1,
+    \cdots,
+    f_1\left(n\right)=n.
+    $\par
+    We define $f_2:N\rightarrow N^2$ based on this graph:
+    \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=8cm]{9_1_1.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    $f_2\left(0\right)=\left(0,0\right),f_2\left(1\right)=\left(0,1\right),f_2\left(2\right)=\left(1,0\right)\cdots$\par
+    We define $f_3:N\rightarrow N^3$ based on this graph:
+   \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=8cm]{9_1_2.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    $f_2\left(0\right)=\left(0,0,0\right),f_2\left(1\right)=\left(0,0,1\right),f_2\left(2\right)=\left(0,1,0\right)\cdots$\par
+    And so on, we can define $f_k,k\in N$.
+    Now we can define a bijection $N\rightarrow N*$ base on this graph:
+    \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=8cm]{9_1_3.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    We have $0\rightarrow f_1\left(0\right),1\rightarrow f_1\left(1\right),2\rightarrow f_2\left(0\right)\cdots$. This is a bijection $N\rightarrow N*$.
+
+	\textbf{Exercise 9.5}\par
+    $000\cdots,100\cdots,1100\cdots,11100\cdots$ According to this rule, the first $n$ bits of the $n_{th}$ sequence are $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably and infinite chain.
+	
+	\textbf{Exercise 9.6}\par
+	$100\cdots,0100\cdots,00100\cdots,000100\cdots$ According to this rule, the $n_{th}$ bit of the $n_{th}$ sequence is $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably and infinite antichain.
+
+	
+\end{document}
+
