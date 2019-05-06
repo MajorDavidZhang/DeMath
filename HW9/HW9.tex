@@ -100,13 +100,30 @@ We use the Cantor's method to proove that. For any $A\in (\{0,1\}^N)^N$, we defi
     \label{}
     \end{figure}
 It is obvious that for any $B\in \{0,1\}^N$, we can get to $f^{-1}\in (\{0,1\}^N)^N$ by writing it down following the blue line. Therefore, $f$ is a bijection and $\{0,1\}\cong (\{0,1\}^N)^N$. Using the fact that $R\cong \{0,1\}^N$, we can get $R\cong R^N$.
-
+	\textbf{Exercise 9.4}\par
+	We know that one continuous function can be expressed by an infinite sequence of real numbers. 
+	Thus we have   $\mathcal{F} \cong \mathbb{R}^{\mathbb{N}}$. According to \textbf{Exercise 9.3},  $\mathbb{R} \cong \mathbb{R}^{\mathbb{N}}$.
+	So we have $\mathcal{F} \cong \mathbb{R}^{\mathbb{N}} \cong \mathbb{R}$.\par
 
 	\textbf{Exercise 9.5}\par
     $000\cdots,100\cdots,1100\cdots,11100\cdots$ According to this rule, the first $n$ bits of the $n_{th}$ sequence are $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably and infinite chain.
 	
 	\textbf{Exercise 9.6}\par
 	$100\cdots,0100\cdots,00100\cdots,000100\cdots$ According to this rule, the $n_{th}$ bit of the $n_{th}$ sequence is $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably and infinite antichain.
+	\textbf{Exercise 9.7}\par
+    	We can form a bijection $f$ from ${\{0,1\}}^{\mathbb{N}}$ to set $A$, which is a subset of ${\{0,1\}}^{\mathbb{N}}$ as follow:
+	Assume a string $s$ is an element of ${\{0,1\}}^{\mathbb{N}}$ and $t=f(s)$, the $k$ digit of $s$ determines the $(2k-1)$-th to 
+	$2k$-th digits of $t$ as the following rule:\par
+	If $k$ digit of $s$ is $0$, then $(2k-1)$-th to $2k$-th digits of $t$ are $01$. If $k$ digit of $s$ is $1$, then $(2k-1)$-th to $2k$-th digits of $t$ are $10$. \par
+	Here is an example :\par
+	$$
+	s=1011010........
+	$$
+	$$
+	f(s)=10,01,10,10,01,10,01,......
+	$$
+	Obviously, $f$ is a bijection and $A$ is uncountable. Also, any two elements $t_{1},t_{2}$ of $A$ is not comparable since $01$ and $10$ can not be comparable.
+	Thus $A$ is antichain required.\par
 	\textbf{Exercise 9.8}\par
 	 We can form a bijection $f$ from ${0,1}^N$ to set $A$, which is a subset of ${0,1}^N$ as follow: Assume a string $s$ is an element of ${0,1}^N$ and  $t=f(s)$, the first k digit of $s_1 ($we call it $s_k)$determines the $(2^{k}+1)-th$ to $2^{k+1}-th $ digits of $t ($ we  call them $t_{2^k+1} to t_{2^{k+1}}$ as the following rule:\par
 	 
