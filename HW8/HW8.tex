@@ -69,15 +69,23 @@
     
 	\textbf{Exercise 8.3}\par
     Yes. We prove it by mathematical induction.\par
-    $(1)$When $n=1$, obviously, we can sort elements from small to large to get an infinite chain.\par
-    $(2)$We suppose every infinite subset $S \subseteq N_0^n$ contain an infinite chain, then when $n=N+1$, we consider the last element of the previous chain. There are two situations:\par
-    $1.$The sequence of the last element is bounded.\par
-    Obviously, at least one value (we call it x) appears infinite times in the sequence of the last element. We select those set with last element that equals to x, obviously it forms a infinite chain of $N_0^{n+1}$.\par
+    $(1)$When $n=1$, obviously, $S$ is an ordered set. We can sort elements from small to large to get an infinite chain.\par
+    $(2)$We suppose every infinite subset $S \subseteq N_0^n$ contain an infinite chain, then when it comes to n+1, according to our hypothesis, ignoring the last element in each vector in $S$, the first n elements of each vector form a chain named $T$. Then we consider the last element of each vector. We define sequence $A$ is the sequence that consists of the last element in each vector in $S$, by the order in $T$.
+ \begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.5]{8_0.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
 
-    $2.$The sequence of the last element is unbounded.\par
-    Since each element is non-negative integer and the sequence is unbounded, we can find a sub-sequence of this sequence which is monotonically increasing. We select those set with last element in this sub-sequence, then it forms a infinite chain of $N_0^{n+1}$.\par
+    There are two situations:\par
+    $1.$Sequence $A$ is bounded.\par
+    Obviously, at least one number (we call it x) appears infinite times in sequence $A$. We select those vectors in chain $T$ whose last element equals to x. Obviously they form an infinite chain of $N_0^{n+1}$.\par
 
-    So every infinite subset $S \subseteq N_0^n$ contain an infinite chain.
+    $2.$Sequence $A$ is unbounded.\par
+    Since each element is non-negative integer and the sequence is unbounded, we can find a sub-sequence $A'$ of sequence $A$ which is monotonically increasing. We select those sets whose last element in $A'$. Then, they form an infinite chain of $N_0^{n+1}$.\par
+
+    So, every infinite subset $S \subseteq N_0^n$ contains an infinite chain.
 
 
 	

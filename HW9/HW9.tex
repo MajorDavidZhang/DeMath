@@ -76,6 +76,20 @@
   	\end{figure}
     We have $0\rightarrow f_1\left(0\right),1\rightarrow f_1\left(1\right),2\rightarrow f_2\left(0\right)\cdots$. This is a bijection $N\rightarrow N^*$.
 
+
+\textbf{Exercise 9.2}\par
+We can define a bijection from $\{0,1\}^N$ to $N$ as follows.\\
+Given $A=(a_1,a_2,\cdots,a_n)$, $a_i \in \{0,1\}$ for $1\leq i \leq n$, let $f(A)=2^{n}+a_1 2^{n-1}+a_2 2^{n-2}+\cdots +a_n2^0-1$. For every element A in $\{0,1\}^N$, there is one $f(A)$ in $N$. For every element $a\in N$, according to the binary code, ther is one $f^{-1}(a) \in \{0,1\}^N$. So, f is a bijection from $\{0,1\}^N$ to $N$. Therefore, $\{0,1\}^N\cong N$.\\
+Using the given fact that $N\times N\cong N$, it is clear that $\{0,1\}^N\cong \{0,1\}^N\times \{0,1\}^N$.\\
+Using the given fact that $R\cong \{0,1\}^N$, it is clear that $R\cong R\times R$.
+
+\textbf{Exercies 9.3}\par
+Using the given fact that $R\cong \{0,1\}^N$ and the fact we proved in \textbf{9.2} that $\{0,1\}^N\cong N$, we only need to prove that $N\cong N^N$. $N^N$ is actually $N^*-\{\in\}$. Using the method of Hilbert's Hotel, it is obvious that $N^N\cong N^*$. We have proved in \textbf{9.1} that $N\cong N^*$. Therefore, $R\cong R^N$.
+ 
+
+
+
+
 	\textbf{Exercise 9.5}\par
     $000\cdots,100\cdots,1100\cdots,11100\cdots$ According to this rule, the first $n$ bits of the $n_{th}$ sequence are $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably and infinite chain.
 	
