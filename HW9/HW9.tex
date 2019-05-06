@@ -78,16 +78,28 @@
 
 
 \textbf{Exercise 9.2}\par
-We can define a bijection from $\{0,1\}^N$ to $N$ as follows.\\
-Given $A=(a_1,a_2,\cdots,a_n)$, $a_i \in \{0,1\}$ for $1\leq i \leq n$, let $f(A)=2^{n}+a_1 2^{n-1}+a_2 2^{n-2}+\cdots +a_n2^0-1$. For every element A in $\{0,1\}^N$, there is one $f(A)$ in $N$. For every element $a\in N$, according to the binary code, ther is one $f^{-1}(a) \in \{0,1\}^N$. So, f is a bijection from $\{0,1\}^N$ to $N$. Therefore, $\{0,1\}^N\cong N$.\\
-Using the given fact that $N\times N\cong N$, it is clear that $\{0,1\}^N\cong \{0,1\}^N\times \{0,1\}^N$.\\
-Using the given fact that $R\cong \{0,1\}^N$, it is clear that $R\cong R\times R$.
+We can define a bijection from $\{0,1\}^N$ to $\{0,1\}^N\times \{0,1\}^N$ as follows.\\
+Given $A=(a_1a_2a_3a_4\cdots,b_1b_2b_3b_4\cdots)$, we define $f(A)=a_1b_1a_2b_2a_3b_3a_4b_4\cdots$. To be more precisely, 
+$$ f(A)[i]=\left\{
+\begin{aligned}
+A[1][\frac{i+1}{2}],\ i\ is\ odd\ number \\
+A[2][\frac{i}{2}],\ i\ is\ even\ number \\
+\end{aligned}
+\right.
+$$
+Obviously, for each $A\in \{0,1\}^N\times \{0,1\}^N$, there is only one $f(A)\in \{0,1\}^N$. For each $B\in \{0,1\}^N$, there is only one $B=f^{-1}(B)\in \{0,1\}^N\times \{0,1\}^N$. Therefore, $f$ is a bijection and $\{0,1\}^N\cong \{0,1\}^N\times\{0,1\}^N$.\\
+Using the fact that $R\cong \{0,1\}^N$, we can get $R\cong R\times R$.
 
 \textbf{Exercies 9.3}\par
-Using the given fact that $R\cong \{0,1\}^N$ and the fact we proved in \textbf{9.2} that $\{0,1\}^N\cong N$, we only need to prove that $N\cong N^N$. $N^N$ is actually $N^*-\{\in\}$. Using the method of Hilbert's Hotel, it is obvious that $N^N\cong N^*$. We have proved in \textbf{9.1} that $N\cong N^*$. Therefore, $R\cong R^N$.
+We use the Cantor's method to proove that. For any $A\in (\{0,1\}^N)^N$, we define that $f(A)$ is the $\{0,1\}^N$ sequence we get by following the blue line as follows.
  
-
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{9_3_1.png}
+    \caption{}
+    \label{}
+    \end{figure}
+It is obvious that for any $B\in \{0,1\}^N$, we can get to $f^{-1}\in (\{0,1\}^N)^N$ by writing it down following the blue line. Therefore, $f$ is a bijection and $\{0,1\}\cong (\{0,1\}^N)^N$. Using the fact that $R\cong \{0,1\}^N$, we can get $R\cong R^N$.
 
 
 	\textbf{Exercise 9.5}\par
