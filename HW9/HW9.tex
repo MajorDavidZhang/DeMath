@@ -74,12 +74,12 @@
   	\caption{}
   	\label{}
   	\end{figure}
-    We have $0\rightarrow f_1\left(0\right),1\rightarrow f_1\left(1\right),2\rightarrow f_2\left(0\right)\cdots$. This is a bijection $\mathbb{N}\rightarrow \mathbb{N}^*$.
+    We have $0\rightarrow \left\{\in\right\},1\rightarrow f_1\left(0\right),2\rightarrow f_1\left(1\right),3\rightarrow f_2\left(0\right)\cdots$. This is a bijection $N\rightarrow N*$.
 
 
 \textbf{Exercise 9.2}\par
 We can define a bijection from $\{0,1\}^\mathbb{N}$ to $\{0,1\}^\mathbb{N}\times \{0,1\}^\mathbb{N}$ as follows.\\
-Given $A=(a_1a_2a_3a_4\cdots,b_1b_2b_3b_4\cdots)$, we define $f(A)=a_1b_1a_2b_2a_3b_3a_4b_4\cdots$. To be more precisely, 
+Given $A=(a_1a_2a_3a_4\cdots,b_1b_2b_3b_4\cdots)$, we define $f(A)=a_1b_1a_2b_2a_3b_3a_4b_4\cdots$. To be more precisely,
 $$ f(A)[i]=\left\{
 \begin{aligned}
 A[1][\frac{i+1}{2}],\ i\ is\ odd\ number \\
@@ -92,7 +92,7 @@ Using the fact that $\mathbb{R}\cong \{0,1\}^\mathbb{N}$, we can get $\mathbb{R}
 
 \textbf{Exercies 9.3}\par
 We use the Cantor's method to proove that. For any $A\in (\{0,1\}^\mathbb{N})^\mathbb{N}$, we define that $f(A)$ is the $\{0,1\}^\mathbb{N}$ sequence we get by following the blue line as follows.
- 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{9_3_1.png}
@@ -112,7 +112,7 @@ It is obvious that for any $B\in \{0,1\}^\mathbb{N}$, we can get to $f^{-1}\in (
 	$$
 	\mathbb{R}:g(q_1),g(q_2),g(q_3),g(q_4),g(q_5),.......
 	$$
-	Obviously $g$ is a bijection. So, one continuous function can be expressed by an infinite sequence of real numbers. 
+	Obviously $g$ is a bijection. So, one continuous function can be expressed by an infinite sequence of real numbers.
 	Thus, we have   $\mathcal{F} \cong \mathbb{R}^{\mathbb{N}}$. According to \textbf{Exercise 9.3},  $\mathbb{R} \cong \mathbb{R}^{\mathbb{N}}$.
 	Therefore, we have $\mathcal{F} \cong \mathbb{R}^{\mathbb{N}} \cong \mathbb{R}$.\par
 
@@ -138,9 +138,9 @@ In the following part, we denote the $i_{th}$ digit of a sequence $X$ as $x_i$.\
 	Thus, $A$ is an required antichain.\par
 	\textbf{Exercise 9.8}\par
 	 $\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
-	 
-	 	 Consider the sequence consisting of the first k digits in S $s_{1:k}$ as a binary number $a_k$. Let $t_{(2^{k}+1):(2^{k}+a_k)}:=1$, $t_{(2^{k}+a_k+1):(2^{k+1})}:=0$. Specially, we define that the first 2 digits of $T$ are always $0$.\\  
-	 
+	
+	 	 Consider the sequence consisting of the first k digits in S $s_{1:k}$ as a binary number $a_k$. Let $t_{(2^{k}+1):(2^{k}+a_k)}:=1$, $t_{(2^{k}+a_k+1):(2^{k+1})}:=0$. Specially, we define that the first 2 digits of $T$ are always $0$.\\
+	
 	 For example:\\
 	 $$
 	 s=1011......
@@ -156,7 +156,7 @@ In the following part, we denote the $i_{th}$ digit of a sequence $X$ as $x_i$.\
 	  $\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
  $$t_n=\sum_{i=1}^n(s_i+1)3^{i-1}$$.
 Obviously, $f$ is a bijection. Let $X=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. $X\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. And $f(S)$ is infinite. Whenever distinct $x,y \in X(x=\{x_1,x_2,...\})$, suppose $m=f^{-1}(x),n=f^{-1}(y)$ and assume the first different digit between $m$ and $n$ is the $k_{th}$ digit. Then $x\cap y=\{x_1,x_2,x_3,\cdots,x_{k-1}\}$, which is finite.
-	 
+	
 		\textbf{Question}\par
 	 How to prove that ${\mathbb{R}}$ is smaller than $2^{\mathbb{R}}$.
 	
