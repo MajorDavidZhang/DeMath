@@ -99,7 +99,7 @@ We use the Cantor's method to proove that. For any $A\in (\{0,1\}^\mathbb{N})^\m
     \caption{}
     \label{}
     \end{figure}
-It is obvious that for any $B\in \{0,1\}^\mathbb{N}$, we can get to $f^{-1}\in (\{0,1\}^\mathbb{N})^\mathbb{N}$ by writing it down following the blue line. Therefore, $f$ is a bijection and $\{0,1\}\cong (\{0,1\}^\mathbb{N})^\mathbb{N}$. Using the fact that $\mathbb{R}\cong \{0,1\}^\mathbb{N}$, we can get $\mathbb{R}\cong \mathbb{R}^\mathbb{N}$.\par
+It is obvious that for any $B\in \{0,1\}^\mathbb{N}$, we can get to $f^{-1}\in (\{0,1\}^\mathbb{N})^\mathbb{N}$ by writing it down following the blue line. Therefore, $f$ is a bijection and $\{0,1\}^\mathbb{N}\cong (\{0,1\}^\mathbb{N})^\mathbb{N}$. Using the fact that $\mathbb{R}\cong \{0,1\}^\mathbb{N}$, we can get $\mathbb{R}\cong \mathbb{R}^\mathbb{N}$.\par
 
 
 	\textbf{Exercise 9.4}\par
@@ -111,9 +111,9 @@ It is obvious that for any $B\in \{0,1\}^\mathbb{N}$, we can get to $f^{-1}\in (
     $000\cdots,100\cdots,1100\cdots,11100\cdots$ According to this rule, the first $n$ bits of the $n^{th}$ sequence are $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably infinite chain.\par
 	
 	\textbf{Exercise 9.6}\par
-	$100\cdots,0100\cdots,00100\cdots,000100\cdots$ According to this rule, the $n^{th}$ bit of the $n^{th}$ sequence is $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably infinite antichain.\par
+	$100\cdots,0100\cdots,00100\cdots,000100\cdots$ According to this rule, the $n^{th}$ bit of the $n^{th}$ sequence is $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably infinite antichain.\\ \par
 
-In the following part, we denote the $i^{th}$ digit of a sequence $X$ as $x_i$.\\
+\textbf{Notion: In the following part, we denote the $i^{th}$ digit of a sequence $X$ as $x_i$.}\\
 
 	\textbf{Exercise 9.7}\par
 	$\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
@@ -125,7 +125,7 @@ In the following part, we denote the $i^{th}$ digit of a sequence $X$ as $x_i$.\
 	$$
 	f(S)=10,01,10,10,01,10,01,......
 	$$
-	Obviously, $f$ is a bijection. Let $A=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. $A\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. Also, $\forall T_{a},T_{b}\in A$ is not comparable since $"01"$ and $"10"$ is not comparable.
+	Let $A=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. Obviously, $f$ is a bijection from ${\{0,1\}}^{\mathbb{N}}$ to $A$. $A\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. Also, $\forall T_{a},T_{b}\in A$ is not comparable since $"01"$ and $"10"$ is not comparable.
 	Thus, $A$ is an required antichain.\par
 	\textbf{Exercise 9.8}\par
 	 $\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
@@ -139,17 +139,20 @@ In the following part, we denote the $i^{th}$ digit of a sequence $X$ as $x_i$.\
 	 $$
 	 f(s)=00,10,1100,11111000,1111111111100000,......
 	 $$
-	 Obviously, $f$ is a bijection. Let $A=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. $A\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. Also, $\forall T_a,T_b\in A$ is comparable for the following reason.\\
- $\forall T_a,T_b\in A,\ T_a\neq T_b$, assume $f^{-1}(T_a)=S_a,\ f^{-1}(T_b)=S_b$. Assume that the first different digit of $S_a$ and $S_b$ is the $k_{th}$ digit and the $k_{th}$ digit of $S_a$ is 1. Then, $\forall m \ge k$, the binary number consisting of the first $m$ digit of $S_a$ is larger than that of $S_b$, which leads to the fact that $T_a$ is "greater" than $T_b$. Thus, $A$ is the required chain. \par
+	 Let $A=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. Obviously, $f$ is a bijection from ${\{0,1\}}^{\mathbb{N}}$ to $A$. $A\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. Also, $\forall T_a,T_b\in A$ is comparable for the following reason.\\
+ $\forall T_a,T_b\in A,\ T_a\neq T_b$, assume $f^{-1}(T_a)=S_a,\ f^{-1}(T_b)=S_b$. Assume that the first different digit of $S_a$ and $S_b$ is the $k^{th}$ digit and the $k^{th}$ digit of $S_a$ is 1. Then, $\forall m \ge k$, the binary number consisting of the first $m$ digit of $S_a$ is larger than that of $S_b$, which leads to the fact that $T_a$ is "greater" than $T_b$. Thus, $A$ is the required chain. \par
 
 	
   \textbf{Exercise 9.9}\par
 	  $\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
- $$t_n=\sum_{i=1}^n(s_i+1)3^{i-1}$$.
-Obviously, $f$ is a bijection. Let $X=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. $X\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. And $f(S)$ is infinite. Whenever distinct $x,y \in X(x=\{x_1,x_2,...\})$, suppose $m=f^{-1}(x),n=f^{-1}(y)$ and assume the first different digit between $m$ and $n$ is the $k_{th}$ digit. Then $x\cap y=\{x_1,x_2,x_3,\cdots,x_{k-1}\}$, which is finite.
+ $$t_n=\sum_{i=1}^n(s_i+1)3^{i-1},\  n\in \mathbb{N}^* $$
+Let $X=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. 
+
+
+Therefore, $f$ is a bijection from ${\{0,1\}}^{\mathbb{N}}$ to $X$. $X\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. And $f(S)$ is an infinite subset of $\mathbb{N}$. Whenever distinct $x,y \in X(x=\{x_1,x_2,...\})$, suppose $m=f^{-1}(x),n=f^{-1}(y)$ and assume the first different digit between $m$ and $n$ is the $k^{th}$ digit. Then $x\cap y=\{x_1,x_2,x_3,\cdots,x_{k-1}\}$, which is finite.
 	
 		\textbf{Question}\par
-	 How to prove that ${\mathbb{R}}$ is smaller than $2^{\mathbb{R}}$.
+	 How to prove that ${\mathbb{R}}\ncong 2^{\mathbb{R}}$.
 	
 \end{document}
 
