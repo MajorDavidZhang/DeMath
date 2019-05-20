@@ -44,6 +44,20 @@
 	
 	
 	\textbf{Exercise 10.1}\par
+	Since $$\sum_{v\in V}f(s,v)=\sum_{v\in V\backslash S}f(s,v)+\sum_{v\in S}f(s,v)$$ we only need to prove that $$\sum_{v\in S}f(s,v)=\sum_{u\in S-s,\ v\in V\backslash S}f(u,v)$$\\
+	Since $$\sum_{v\in S}f(s,v)=-\sum_{v\in S-s}f(v,s)$$ we only need to prove that $$\sum_{u\in S-s,\ v\in s+V\backslash S}f(u,v)=0$$
+	It is obvious to see that $$\sum_{u\in S-s,\ v\in S-s}f(u,v)=0$$
+	So, we only need to prove that $$\sum_{u\in S-s,\ v\in s+V\backslash S}f(u,v)+\sum_{u\in S-s,\ v\in S-s}f(u,v)=\sum_{u\in S-s,\ v\in V}f(u,v)=0$$
+	According to the defination, $$\sum_{u\in S-s,\ v\in V}f(u,v)=0$$
+	Done.
+
+
+	\textbf{Exercise 10.2}\par
+	Define the minimum cut between i and j as minCut(i,j). According to the Max Flow Min Cut Theorem, minCut(s,r)$\geq$k, minCut(r,t)$\geq$k. Obviously, minCut(s,t)$\geq$min\{minCut(s,r),minCut(r,t)\}$\geq$k, which means there is a flow from s to r of value k.
+
+	\textbf{Exercise 10.3}\par
+	Suppose there is a s-t-path in G that has less that k edges. Then, at least one edge in the path moves more than one level forward, which contradicts Definition 10.3. So, $dist(s,t)\geq k$.
+
 	
 	\textbf{Exercise 10.9}\par
 	\textbf{proof} According to \textbf{Exercise 10.8}, a particular layering is no more optimal after at moat $m$ iterations. Since a layering is at least 1-layering and at most n-latering, after at most $m*n$ iterations, there is no optimal layering, which means there is no s-t-path, the algorithm terminates.
