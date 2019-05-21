@@ -71,26 +71,27 @@
 
 	
 	\textbf{Exercise 10.6}\par
-	Obviously, $(1)s\in V_{0}$ and $(2)t\in V_{k}$ are satisfied, we consider condition $(3)$. Since $(G,s,t,c)$ is a flow network
-	and $V_{0},V_{1},...,V_{k}$ is an optimal layering, every edge in $G$ moves at most one level forward and $dist_G(s,t)=k$. And we denote the path $p$
-	as $s\rightarrow v_{1}\rightarrow v_{2} \rightarrow ...\rightarrow v_{k-1} \rightarrow t $. Then we can get  $s\in V_{0}$, $v_{1}\in V_{1}$, ... ,$v_{i}\in V_{i}$, ... ,$v_{k-1}\in V_{k-1}$ and $t\in V_{k}$. Each edge is between two adjacent layerings. Since residual network $G_{f}$ only add a reverse edge in each edge in $p$, these additional edge is also between two adjacent layerings. So $V_{0},V_{1},...,V_{k}$ satisfy condition $3$ and it is a layering of $(G_{f},s,t,c_{f})$.\par
+	Obviously, $(1)s\in V_{0}$ and $(2)t\in V_{k}$ are satisfied, we consider condition $(3)$. Since $(G,s,t,c)$ is a flow network 
+	and $V_{0},V_{1},...,V_{k}$ is an optimal layering, every edge in $G$ moves at most one level forward and $dist_G(s,t)=k$. And we denote the path $p$ 
+	as $s\rightarrow v_{1}\rightarrow v_{2} \rightarrow ...\rightarrow v_{k-1} \rightarrow t $. Then we can get  $s\in V_{0}$, $v_{1}\in V_{1}$, ... ,$v_{i}\in V_{i}$, ... ,$v_{k-1}\in V_{k-1}$ and $t\in V_{k}$. Each edge is between two adjacent layerings. Since residual network $G_{f}$ only add a reverse edge of each edge in $p$, these additional edges are also between two adjacent layerings. So $V_{0},V_{1},...,V_{k}$ satisfy condition $(3)$ and it is a layering of $(G_{f},s,t,c_{f})$.\par
 
     \textbf{Exercise 10.7}\par
     Because there is a path from $s$ to $t$, we suppose $dist_G(s,t)=k$. Based on the construction method in $10.5$, we can find a k-layering and it is an optimal layering. Therefore, every network$(G,s,t,c)$ has an optimal layering, provided there is a path from $s$ to $t$.
 	
 	\textbf{Exercise 10.8}\par
-	We consider each while-loop of EK algorithm. In every iteration  EK algorithm choose $p$ to be a shortest s-t-path in $G_{f}$.
-	And we denote the path $p$ as $v_{0}\rightarrow v_{1}\rightarrow v_{2} \rightarrow ...\rightarrow v_{k-1} \rightarrow v_{k} $ and $v_{0}=s\in V_{0}$, $v_{1}\in V_{1}$, ... ,$v_{i}\in V_{i}$, ... ,$v_{k-1}\in V_{k-1}$ and $v_{k}=t\in V_{k}$. Then EK algorithm routes $c_{min}$ flow along $p$. So in $G$ there $\exists (v_{i},v_{i+1})\in p$ where $i\in {0,1,2...,k}$, $c_{f}(v_{i},v_{i+1})=c_{min}$ and in $G_{f}$, $c_{f}(v_{i},v_{i+1})=0$ and  $c_{f}(v_{i+1},v_{i})=c_{min}$. Obviously, after that $c_{f}(v_{i},v_{i+1})$ is always $0$ if  $V_{0},V_{1},...,V_{k}$ is still an optimal layering, otherwise there is a feasible s-t-path from $v_{i+1}$ to $v_{i}$ which is impossible. Therefore in every iteration, the total number of edges, which are from $V_{i}$ to $V_{i+1} (\forall i \in{0,1,2,..,k})$ and in feasible s-t-path($dist(s,t)=k$), will minus at least one. Obviously these edges are less than or equal to $m$. So after $m$ iteration, there no feasible s-t-path which $dist(s,t)=k$ and $dist(s,t)$ will be large than $k$. Therefore after at most $m$ iterations of  the while-loop, $V_{0},V_{1},...,V_{k}$ ceases to be an optimal layering.\par
+	We consider each while-loop of EK algorithm. In every iteration, EK algorithm choose $p$ to be a shortest s-t-path in $G_{f}$. 
+	And we denote the path $p$ as $v_{0}\rightarrow v_{1}\rightarrow v_{2} \rightarrow ...\rightarrow v_{k-1} \rightarrow v_{k} $ and $v_{0}=s\in V_{0}$, $v_{1}\in V_{1}$, ... ,$v_{i}\in V_{i}$, ... ,$v_{k-1}\in V_{k-1}$ and $v_{k}=t\in V_{k}$. Then, EK algorithm routes $c_{min}$ flow along $p$. In $G$, $\exists (v_{i},v_{i+1})\in p$ where $i\in {0,1,2...,k}$, $c_{f}(v_{i},v_{i+1})=c_{min}$. In $G_{f}$, $c_{f}'(v_{i},v_{i+1})=0$ and  $c_{f}'(v_{i+1},v_{i})=c_{min}$. \\
+	Obviously, if  $V_{0},V_{1},...,V_{k}$ is still an optimal layering, $c_{f}(v_{i},v_{i+1})$ is always $0$. Otherwise, there is a feasible s-t-path from $v_{i+1}$ to $v_{i}$, which is impossible. Therefore, in every iteration, the total number of the edges, which are from $V_{i}$ to $V_{i+1} (\forall i \in{0,1,2,..,k})$ and in feasible s-t-path($dist(s,t)=k$), will minus at least one. Obviously, these edges are less than or equal to $m$. So, after $m$ iteration, there is no feasible s-t-path which $dist(s,t)=k$, and $dist(s,t)$ will be larger than $k$. So, after at most $m$ iterations of  the while-loop, $V_{0},V_{1},...,V_{k}$ ceases to be an optimal layering.\par
 	
 	\textbf{Exercise 10.9}\par
-	\textbf{proof} According to \textbf{Exercise 10.8}, a particular layering is no more optimal after at moat $m$ iterations. Since a layering is at least 1-layering and at most n-latering, after at most $m*n$ iterations, there is no optimal layering, which means there is no s-t-path, the algorithm terminates.
+	According to \textbf{Exercise 10.8}, a particular layering is no more optimal after at most $m$ iterations. Since a layering is at least 1-layering and at most n-latering, after at most $m*n$ iterations, there is no optimal layering, which means there is no s-t-path, the algorithm terminates.
 	
 	
 	\textbf{Exercise 10.10}\par
-	\textbf{proof} According to \textbf{Exercise 10.9},  the Edmonds-Karp algorithm terminates after n·m iterations of the while-loop, which is to say, we can get the max flow $f$ after finite steps by Edmonds-Karp algorithm.
+	According to \textbf{Exercise 10.9},  the Edmonds-Karp algorithm terminates after n·m iterations of the while-loop, which is to say, we can get the max flow $f$ after finite steps by Edmonds-Karp algorithm.
 
 		\textbf{Question}\par
-	
+	Can we use the Edmonds-Karp algorithm in multi-source network?
 	
 \end{document}
 
