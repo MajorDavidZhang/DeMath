@@ -10,7 +10,7 @@
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
 
 
-\title{CS499 Homework 9 (First Draft)}
+\title{CS499 Homework 9}
 
 
 \author{
@@ -43,27 +43,116 @@
 	\maketitle
 	
 	
-	\textbf{Exercise 10.5}\par
-    Since dist$(s,t)=k$, we have a path $s\rightarrow u_1\rightarrow u_2 \cdots u_{k-1}\rightarrow t$.For convenience, we call $s:u_0,t:u_k$. We construct $V_0, V_1\cdots V_K$ as follows:\par
-    Step$1$:$u_0\in V_0, u_1\in V_1, u_2\in V_2\cdots u_{k-1}\in V_{K-1}, u_k\in V_K.$\par
-    Step$2$:$\forall v\in V \backslash V_k$, if there is an edge $(v,t), v\in V_{k-1}$. Obviously, $\forall n, 0\leq n \leq k-2, u_n$ can't link to t. Otherwise, we can skip $u_{k-1}$ and get a shorter path from $s$ to $t$, which contradicts $dist(s,t)=k$.\par
-    Step$3$:$forall v\in V \backslash (V_k\cup V_{k-1})$, if $\exists w \in V_{k-1}, \exists edge (v,w), v\in V_{k-2}.$ Similarly, $\forall n, 0\leq n\leq k-3,$ $u_n$ can't link to any vertex in $V_{k-1}.$\par
-    \vdots
-    Step$k$:$\forall v\in V \backslash \bigcup_{i=2}^kV_i$, if $\exists w\in V_2, \exists edge (v,w), v\in V_1.$ Similarly, $u_0$ can't link to any vertex in $V_2$.\par
-    Step$k+1$:$\forall v \in V $ and $ v \notin V_i, i \neq 1,2,3\cdots k, v \in V_0$.\par
-    Therefore, if dist$(s,t)=k$, $(G,s,t,c)$ has a k-layering.
+	\textbf{Exercise 9.1}\par
+    We define$f_1:\mathbb{N}\rightarrow \mathbb{N}$\par
+    $f_1\left(0\right)=0,
+    f_1\left(1\right)=1,
+    \cdots,
+    f_1\left(n\right)=n.
+    $\par
+    We define $f_2:\mathbb{N}\rightarrow \mathbb{N}^2$ based on this graph:
+    \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=8cm]{9_1_1.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    $f_2\left(0\right)=\left(0,0\right),f_2\left(1\right)=\left(0,1\right),f_2\left(2\right)=\left(1,0\right)\cdots$\par
+    We define $f_3:\mathbb{N}\rightarrow \mathbb{N}^3$ based on this graph:
+   \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=8cm]{9_1_2.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    $f_2\left(0\right)=\left(0,0,0\right),f_2\left(1\right)=\left(0,0,1\right),f_2\left(2\right)=\left(0,1,0\right)\cdots$\par
+    And so on, we can define $f_k,k\in \mathbb{N}$.
+    Now we can define a bijection $\mathbb{N}\rightarrow \mathbb{N}^*$ base on this graph:
+    \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=8cm]{9_1_3.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    We have $0\rightarrow \left\{\in\right\},1\rightarrow f_1\left(0\right),2\rightarrow f_1\left(1\right),3\rightarrow f_2\left(0\right)\cdots$. This is a bijection $N\rightarrow N*$.
 
 
-    \textbf{Exercise 10.7}\par
-    Because there is a path from $s$ to $t$, we suppose $dist_G(s,t)=k$. Based on the construction method in $10.5$, we can find a k-layering and it is an optimal layering. Therefore, every network$(G,s,t,c)$ has an optimal layering, provided there is a path from $s$ to $t$.
+\textbf{Exercise 9.2}\par
+We can define a bijection from $\{0,1\}^\mathbb{N}$ to $\{0,1\}^\mathbb{N}\times \{0,1\}^\mathbb{N}$ as follows.\\
+Given $A=(a_1a_2a_3a_4\cdots,b_1b_2b_3b_4\cdots)$, we define $f(A)=a_1b_1a_2b_2a_3b_3a_4b_4\cdots$. To be more precisely,
+$$ f(A)[i]=\left\{
+\begin{aligned}
+A[1][\frac{i+1}{2}],\ i\ is\ odd\ number \\
+A[2][\frac{i}{2}],\ i\ is\ even\ number \\
+\end{aligned}
+\right.
+$$
+Obviously, for each $A\in \{0,1\}^\mathbb{N}\times \{0,1\}^\mathbb{N}$, there is only one $f(A)\in \{0,1\}^\mathbb{N}$. For each $B\in \{0,1\}^\mathbb{N}$, there is only one $B=f^{-1}(B)\in \{0,1\}^\mathbb{N}\times \{0,1\}^\mathbb{N}$. Therefore, $f$ is a bijection and $\{0,1\}^\mathbb{N}\cong \{0,1\}^\mathbb{N}\times\{0,1\}^\mathbb{N}$.\\
+Using the fact that $\mathbb{R}\cong \{0,1\}^\mathbb{N}$, we can get $\mathbb{R}\cong \mathbb{R}\times \mathbb{R}$.
+
+\textbf{Exercies 9.3}\par
+We use the Cantor's method to proove that. For any $A\in (\{0,1\}^\mathbb{N})^\mathbb{N}$, we define that $f(A)$ is the $\{0,1\}^\mathbb{N}$ sequence we get by following the blue line as follows.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{9_3_1.png}
+    \caption{}
+    \label{}
+    \end{figure}
+It is obvious that for any $B\in \{0,1\}^\mathbb{N}$, we can get to $f^{-1}\in (\{0,1\}^\mathbb{N})^\mathbb{N}$ by writing it down following the blue line. Therefore, $f$ is a bijection and $\{0,1\}^\mathbb{N}\cong (\{0,1\}^\mathbb{N})^\mathbb{N}$. Using the fact that $\mathbb{R}\cong \{0,1\}^\mathbb{N}$, we can get $\mathbb{R}\cong \mathbb{R}^\mathbb{N}$.\par
+
+
+	\textbf{Exercise 9.4}\par
+	We can form a bijection from $\mathcal{F}$ to $\mathbb{R}^\mathbb{N}$ as follows. For $\forall f\in \mathcal{F}$, we can determine it solely if and only if we know $f(q)$ for $\forall q\in \mathbb{Q}$. Since $\mathbb{Q}$ is countable, we can list $\mathbb{Q}$ as a sequence of $q_{0},q_{1},q_{2},...,q_{n},...$ Thus we can determine f if and only if we know the sequence $f(q_{0}),f(q_{1}),...,f(q_{n}),...$ And $f(q_{i})\in \mathbb{R}$ where $i\in \mathbb{N}$, so we can form a bijection from  $\mathcal{F}$ to $\mathbb{R}^\mathbb{N}$.
+	Thus, we have   $\mathcal{F} \cong \mathbb{R}^{\mathbb{N}}$. According to \textbf{Exercise 9.3},  $\mathbb{R} \cong \mathbb{R}^{\mathbb{N}}$.
+	Therefore, we have $\mathcal{F} \cong \mathbb{R}^{\mathbb{N}} \cong \mathbb{R}$.\par
+
+	\textbf{Exercise 9.5}\par
+    $000\cdots,100\cdots,1100\cdots,11100\cdots$ According to this rule, the first $n$ bits of the $n^{th}$ sequence are $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably infinite chain.\par
+	
+	\textbf{Exercise 9.6}\par
+	$100\cdots,0100\cdots,00100\cdots,000100\cdots$ According to this rule, the $n^{th}$ bit of the $n^{th}$ sequence is $1$, and the remaining bits are $0$. Obviously, these sequences constitute a countably infinite antichain.\\ \par
+
+\textbf{Notion: In the following part, we denote the $i^{th}$ digit of a sequence $X$ as $x_i$.}\\
+
+	\textbf{Exercise 9.7}\par
+	$\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
+	If $s_k=0$, then $t_{2k-1}:=0$, $t_{2k}:=1$.\\ If $s_k=1$, then $t_{2k-1}:=1$, $t_{2k}:=0$.\\
+	For example:\\
+	$$
+	S=1011010........
+	$$
+	$$
+	f(S)=10,01,10,10,01,10,01,......
+	$$
+	Let $A=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. Obviously, $f$ is a bijection from ${\{0,1\}}^{\mathbb{N}}$ to $A$. $A\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. Also, $\forall T_{a},T_{b}\in A$ is not comparable since $"01"$ and $"10"$ is not comparable.
+	Thus, $A$ is an required antichain.\par
+	\textbf{Exercise 9.8}\par
+	 $\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
+	
+	 	 Consider the sequence consisting of the first k digits in S $s_{1:k}$ as a binary number $a_k$. Let $t_{(2^{k}+1):(2^{k}+a_k)}:=1$, $t_{(2^{k}+a_k+1):(2^{k+1})}:=0$. Specially, we define that the first 2 digits of $T$ are always $0$.\\
+	
+	 For example:\\
+	 $$
+	 s=1011......
+	 $$
+	 $$
+	 f(s)=00,10,1100,11111000,1111111111100000,......
+	 $$
+	 Let $A=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. Obviously, $f$ is a bijection from ${\{0,1\}}^{\mathbb{N}}$ to $A$. $A\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. Also, $\forall T_a,T_b\in A$ is comparable for the following reason.\\
+ $\forall T_a,T_b\in A,\ T_a\neq T_b$, assume $f^{-1}(T_a)=S_a,\ f^{-1}(T_b)=S_b$. Assume that the first different digit of $S_a$ and $S_b$ is the $k^{th}$ digit and the $k^{th}$ digit of $S_a$ is 1. Then, $\forall m \ge k$, the binary number consisting of the first $m$ digit of $S_a$ is larger than that of $S_b$, which leads to the fact that $T_a$ is "greater" than $T_b$. Thus, $A$ is the required chain. \par
+
 	
   \textbf{Exercise 9.9}\par
 	  $\forall S\in {\{0,1\}}^{\mathbb{N}}$, define $f(S)=T$ as follows.\par
- $$t_n=\sum_{i=1}^n(s_i+1)3^{i-1}$$.
-Obviously, $f$ is a bijection. Let $X=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. $X\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. And $f(S)$ is infinite. Whenever distinct $x,y \in X(x=\{x_1,x_2,...\})$, suppose $m=f^{-1}(x),n=f^{-1}(y)$ and assume the first different digit between $m$ and $n$ is the $k_{th}$ digit. Then $x\cap y=\{x_1,x_2,x_3,\cdots,x_{k-1}\}$, which is finite.
+ $$t_n=\sum_{i=1}^n(s_i+1)3^{i-1},\  n\in \mathbb{N}^* $$
+Let $X=\{f(S)|\forall S\in {\{0,1\}}^{\mathbb{N}}\}$. 
+
+
+Therefore, $f$ is a bijection from ${\{0,1\}}^{\mathbb{N}}$ to $X$. $X\cong {\{0,1\}}^{\mathbb{N}}$ is uncountable. And $f(S)$ is an infinite subset of $\mathbb{N}$. Whenever distinct $x,y \in X(x=\{x_1,x_2,...\})$, suppose $m=f^{-1}(x),n=f^{-1}(y)$ and assume the first different digit between $m$ and $n$ is the $k^{th}$ digit. Then $x\cap y=\{x_1,x_2,x_3,\cdots,x_{k-1}\}$, which is finite.
 	
 		\textbf{Question}\par
-	 How to prove that ${\mathbb{R}}$ is smaller than $2^{\mathbb{R}}$.
+	 How to prove that ${\mathbb{R}}\ncong 2^{\mathbb{R}}$.
 	
 \end{document}
 

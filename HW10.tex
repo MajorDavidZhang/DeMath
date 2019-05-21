@@ -1,0 +1,82 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{nips15submit_e,times}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amssymb}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{CS499 Homework 10 (First Draft)}
+
+
+\author{
+	Intersteller\thanks{ Use footnote for providing further information
+		about author (webpage, alternative address)---\emph{not} for acknowledging
+		funding agencies.}
+	Department of Computer Science
+	Cranberry-Lemon University
+	Pittsburgh, PA 15213
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\newtheorem{theorem}{}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+	
+	
+	\maketitle
+	
+	
+	\textbf{Exercise 10.1}\par
+	Since $$\sum_{v\in V}f(s,v)=\sum_{v\in V\backslash S}f(s,v)+\sum_{v\in S}f(s,v)$$ we only need to prove that $$\sum_{v\in S}f(s,v)=\sum_{u\in S-s,\ v\in V\backslash S}f(u,v)$$\\
+	Since $$\sum_{v\in S}f(s,v)=-\sum_{v\in S-s}f(v,s)$$ we only need to prove that $$\sum_{u\in S-s,\ v\in s+V\backslash S}f(u,v)=0$$
+	It is obvious to see that $$\sum_{u\in S-s,\ v\in S-s}f(u,v)=0$$
+	So, we only need to prove that $$\sum_{u\in S-s,\ v\in s+V\backslash S}f(u,v)+\sum_{u\in S-s,\ v\in S-s}f(u,v)=\sum_{u\in S-s,\ v\in V}f(u,v)=0$$
+	According to the defination, $$\sum_{u\in S-s,\ v\in V}f(u,v)=0$$
+	Done.
+
+
+	\textbf{Exercise 10.2}\par
+	Define the minimum cut between i and j as minCut(i,j). According to the Max Flow Min Cut Theorem, minCut(s,r)$\geq$k, minCut(r,t)$\geq$k. Obviously, minCut(s,t)$\geq$min\{minCut(s,r),minCut(r,t)\}$\geq$k, which means there is a flow from s to r of value k.
+
+	\textbf{Exercise 10.4}\par
+	Suppose there is a s-t-path in G that has less that k edges. Then, at least one edge in the path moves more than one level forward, which contradicts Definition 10.3. So, $dist(s,t)\geq k$.
+
+	
+	\textbf{Exercise 10.6}\par
+	Obviously, $(1)s\in V_{0}$ and $(2)t\in V_{k}$ are satisfied, we consider condition $(3)$. Since $(G,s,t,c)$ is a flow network 
+	and $V_{0},V_{1},...,V_{k}$ is an optimal layering, every edge in $G$ moves at most one level forward and $dist_G(s,t)=k$. And we denote the path $p$ 
+	as $s\rightarrow v_{1}\rightarrow v_{2} \rightarrow ...\rightarrow v_{k-1} \rightarrow t $. Then we can get  $s\in V_{0}$, $v_{1}\in V_{1}$, ... ,$v_{i}\in V_{i}$, ... ,$v_{k-1}\in V_{k-1}$ and $t\in V_{k}$. Each edge is between two adjacent layerings. Since residual network $G_{f}$ only add a reverse edge in each edge in $p$, these additional edge is also between two adjacent layerings. So $V_{0},V_{1},...,V_{k}$ satisfy condition $3$ and it is a layering of $(G_{f},s,t,c_{f})$.\par
+	
+	\textbf{Exercise 10.8}\par
+	We consider each while-loop of EK algorithm. In every iteration  EK algorithm choose $p$ to be a shortest s-t-path in $G_{f}$. 
+	And we denote the path $p$ as $v_{0}\rightarrow v_{1}\rightarrow v_{2} \rightarrow ...\rightarrow v_{k-1} \rightarrow v_{k} $ and $v_{0}=s\in V_{0}$, $v_{1}\in V_{1}$, ... ,$v_{i}\in V_{i}$, ... ,$v_{k-1}\in V_{k-1}$ and $v_{k}=t\in V_{k}$. Then EK algorithm routes $c_{min}$ flow along $p$. So in $G$ there $\exists (v_{i},v_{i+1})\in p$ where $i\in {0,1,2...,k}$, $c_{f}(v_{i},v_{i+1})=c_{min}$ and in $G_{f}$, $c_{f}(v_{i},v_{i+1})=0$ and  $c_{f}(v_{i+1},v_{i})=c_{min}$. Obviously, after that $c_{f}(v_{i},v_{i+1})$ is always $0$ if  $V_{0},V_{1},...,V_{k}$ is still an optimal layering, otherwise there is a feasible s-t-path from $v_{i+1}$ to $v_{i}$ which is impossible. Therefore in every iteration, the total number of edges, which are from $V_{i}$ to $V_{i+1} (\forall i \in{0,1,2,..,k})$ and in feasible s-t-path($dist(s,t)=k$), will minus at least one. Obviously these edges are less than or equal to $m$. So after $m$ iteration, there no feasible s-t-path which $dist(s,t)=k$ and $dist(s,t)$ will be large than $k$. Therefore after at most $m$ iterations of  the while-loop, $V_{0},V_{1},...,V_{k}$ ceases to be an optimal layering.\par
+	
+	\textbf{Exercise 10.9}\par
+	\textbf{proof} According to \textbf{Exercise 10.8}, a particular layering is no more optimal after at moat $m$ iterations. Since a layering is at least 1-layering and at most n-latering, after at most $m*n$ iterations, there is no optimal layering, which means there is no s-t-path, the algorithm terminates.
+	
+	
+	\textbf{Exercise 10.10}\par
+	\textbf{proof} According to \textbf{Exercise 10.9},  the Edmonds-Karp algorithm terminates after n·m iterations of the while-loop, which is to say, we can get the max flow $f$ after finite steps by Edmonds-Karp algorithm.
+   
+		\textbf{Question}\par
+	 
+	
+\end{document}
+
