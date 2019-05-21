@@ -57,12 +57,12 @@
 
 	\textbf{Exercise 10.4}\par
 	Suppose there is a s-t-path in G that has less that k edges. Then, at least one edge in the path moves more than one level forward, which contradicts Definition 10.3. So, $dist(s,t)\geq k$.
-    
+
     \textbf{Exercise 10.5}\par
     Since dist$(s,t)=k$, we have a path $s\rightarrow u_1\rightarrow u_2 \cdots u_{k-1}\rightarrow t$.For convenience, we call $s:u_0,t:u_k$. We construct $V_0, V_1\cdots V_K$ as follows:\par
     Step$1$:$u_0\in V_0, u_1\in V_1, u_2\in V_2\cdots u_{k-1}\in V_{K-1}, u_k\in V_K.$\par
     Step$2$:$\forall v\in V \backslash V_k$, if there is an edge $(v,t), v\in V_{k-1}$. Obviously, $\forall n, 0\leq n \leq k-2, u_n$ can't link to t. Otherwise, we can skip $u_{k-1}$ and get a shorter path from $s$ to $t$, which contradicts $dist(s,t)=k$.\par
-    Step$3$:$forall v\in V \backslash (V_k\cup V_{k-1})$, if $\exists w \in V_{k-1}, \exists edge (v,w), v\in V_{k-2}.$ Similarly, $\forall n, 0\leq n\leq k-3,$ $u_n$ can't link to any vertex in $V_{k-1}.$\par
+    Step$3$:$\forall v\in V \backslash (V_k\cup V_{k-1})$, if $\exists w \in V_{k-1}, \exists edge (v,w), v\in V_{k-2}.$ Similarly, $\forall n, 0\leq n\leq k-3,$ $u_n$ can't link to any vertex in $V_{k-1}.$\par
     \vdots
     Step$k$:$\forall v\in V \backslash \bigcup_{i=2}^kV_i$, if $\exists w\in V_2, \exists edge (v,w), v\in V_1.$ Similarly, $u_0$ can't link to any vertex in $V_2$.\par
     Step$k+1$:$\forall v \in V $ and $ v \notin V_i, i \neq 1,2,3\cdots k, v \in V_0$.\par
