@@ -50,7 +50,7 @@
     Therefore, if G is a $d$-regular bipartite graph, the edges $E(G)$ can be partitioned into $d$ perfect matchings.
 
 \textbf{Exercise 11.4}\par
-    $1.$ For every vertex $X \in V$, add $X\prime$ to constitute $V\prime$. If the capacity of $X$ is $c(X)$ in $G$, the capacity of $edge(X,X\prime)$ in $(G\prime)$ is $c(X).$ If $edge(X,Y)\in E$, $edge(X\prime,Y)\in E\prime$ and $c(X\prime,Y)$ is $\infty$.\par
+    $1.$ For every vertex $X \in V$, add $X\prime$ to constitute $V\prime$. If the capacity of $X$ is $c(X)$ in $G$, the capacity of $edge(X,X\prime)$ in $(G\prime)$ is $c(X).$ If $edge(X,Y)\in E$, $edge(X\prime,Y)\in E\prime$ and $c(X\prime,Y)$ is $\infty$.If the original flow is from s to t, then the flow in $G\prime$ is from s to $t/prime$.\par
     $2.$
     \begin{figure}[H]
   	\centering
@@ -70,11 +70,10 @@
 \textbf{Exercise 11.7}\par
 	It is impossible to be always full and never crossing.\par
 	Proof: Consider an edge $e$ which is always full. We assume the max flow is $MAX$ and $f(e)=c(e)$. We delete this edge and the max flow of residual network is $MAX-c(e)$.
-	There must exist minimum cut $MAX-c(e)$ in residual network. We add edge $e$ to this cut and will get minimum cut $MAX$ in original network. Therefore, edge $e$ can be crossing and  is impossible to be never crossing.\par
+	There must exist minimum cut $MAX-c(e)$ in residual network. We add edge $e$ to this cut and will get minimum cut $MAX$ in original network. Therefore, edge $e$ can be crossing and  is impossible to be a never-crossing edge.\par
 	It is impossible to be sometimes full and always crossing, sometimes full and sometimes crossing, never full and always crossing, never full and sometimes crossing.\par
-	Proof: These four cases can be proved together. No matter whether it is sometimes full or never full, the edge $e$ which can be not full. We assume the max flow is $MAX$ and
-	$f(e)=m<c(e)$. We delete edge $e$ and the max flow of residual network is $MAX-m$. There must exist minimum cut $MAX-m$ in residual network. If edge $e$ can be crossing, then
-	minimum cut in 	original network will be $MAX-m+c(e)>MAX$, which is impossible. Therefore edge $e$ is never crossing. Always crossing and sometimes crossing are impossible.\par
+	Proof: These four cases can be proved together. No matter whether it is sometimes full or never full, the edge $e$ can be not full. We assume the max flow is $MAX$ and
+	$f(e)=m<c(e)$. If edge $e$ belongs to a minimum cut, delete it and the max flow of residual network is $MAX-m$. The minimum cut $MAX-m$ of the residual network is $MAX-m$. If edge $e$ can be crossing, then the minimum cut in the original network will be $MAX-m+c(e)>MAX$, which controdicts the max-flow-min-cut theorem, so it is not the minimun cut. Therefore edge $e$ is never crossing. \par
 	It is possible to be sometimes full and never crossing, never full and never crossing.\par
 	Example:\par
     \begin{figure}[H]
