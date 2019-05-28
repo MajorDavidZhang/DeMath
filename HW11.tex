@@ -34,7 +34,34 @@
 	 where we get $p\leq 0$ and $p>0$ which contradict each other. So  different strings cannot transform into a same string by the method.\par
 	 
 	 Accordingly, we can get a matching of size $(^n _k)$ between the k-th layer and the $(k+1)$-th layer.
-	 
+\textbf{Exercise 11.2}\par
+	This case, $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$. We use contradiction to prove it. 
+	Assume $|\Gamma(A)|<|A|$, $\exists A\subseteq L$. Since every vertex has degree $d$, consider $A$, we have $d\times |A|$ edges. 
+	Since $\frac{d\times|A|}{|\Gamma(A)|}>d$, there must exist a vertex in $R$ which degree is larger than $d$. It is a contradiction. 
+	Therefore, $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$. According to course video, if $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$,
+	then (and only then) there exists a matching of size $|L|$. $G$ has a perfect matching.\par 	 
 \textbf{Exercise 11.5}\par	 
 	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2I-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible. Therefore, we can find $(^n _i)$ paths as requested.
+
+\textbf{Exercise 11.6}\par
+	1. $e$ is always full. $b$, $c$, $d$, $f$, $g$, $h$, $i$ is sometimes full. $a$ is never full.\par
+	2. $e$ is always crossing. $a$, $b$, $c$, $d$, $f$, $g$, $h$, $i$ is never crossing.\par
+	
+\textbf{Exercise 11.7}\par
+	It is impossible to be always full and never crossing.\par
+	Proof: Consider an edge $e$ which is always full. We assume the max flow is $MAX$ and $f(e)=c(e)$. We delete this edge and the max flow of residual network is $MAX-c(e)$.
+	There must exist minimum cut $MAX-c(e)$ in residual network. We add edge $e$ to this cut and will get minimum cut $MAX$ in original network. Therefore, edge $e$ can be crossing and  is impossible to be never crossing.\par
+	It is impossible to be sometimes full and always crossing, sometimes full and sometimes crossing, never full and always crossing, never full and sometimes crossing.\par
+	Proof: These four cases can be proved together. No matter whether it is sometimes full or never full, the edge $e$ which can be not full. We assume the max flow is $MAX$ and 
+	$f(e)=m<c(e)$. We delete edge $e$ and the max flow of residual network is $MAX-m$. There must exist minimum cut $MAX-m$ in residual network. If edge $e$ can be crossing, then 
+	minimum cut in 	original network will be $MAX-m+c(e)>MAX$, which is impossible. Therefore edge $e$ is never crossing. Always crossing and sometimes crossing are impossible.\par
+	It is possible to be sometimes full and never crossing, never full and never crossing.\par
+	Example:\par
+	\begin{figure}[H]
+  	\centering
+  	\includegraphics[scale=0.5]{1.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+	In this network, $b$, $c$, $d$, $f$, $g$, $h$, $i$ is sometimes full and $a$ is never full. And $a$, $b$, $c$, $d$, $f$, $g$, $h$, $i$ are all never crossing.\par
 	 
