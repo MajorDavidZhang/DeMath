@@ -1,5 +1,5 @@
 \documentclass{article} % For LaTeX2e
-%\usepackage{nips15submit_e,times}
+\usepackage{nips15submit_e,times}
 \usepackage[colorlinks,linkcolor=red]{hyperref}
 \usepackage{url}
 \usepackage{amsmath}
@@ -8,7 +8,39 @@
 \usepackage{bm}
 \usepackage{amssymb}
 %\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{CS499 Homework 11 (First Draft)}
+
+
+\author{
+	Intersteller\thanks{ Use footnote for providing further information
+		about author (webpage, alternative address)---\emph{not} for acknowledging
+		funding agencies.}
+	Department of Computer Science
+	Cranberry-Lemon University
+	Pittsburgh, PA 15213
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\newtheorem{theorem}{}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
+
 \begin{document}
+	
+	
+	\maketitle
 \textbf{Exercise 11.1}\par
 
 	 As we have proved in \textbf{Exercise 8.8}, the largest antichain of $\{0,1\}^n$ is $\binom{n}{\lfloor n/2\rfloor}$. \par
@@ -40,8 +72,7 @@
 	Since $\frac{d\times|A|}{|\Gamma(A)|}>d$, there must exist a vertex in $R$ which degree is larger than $d$. It is a contradiction.
 	Therefore, $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$. According to course video, if $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$,
 	then (and only then) there exists a matching of size $|L|$. $G$ has a perfect matching.\par 	
-\textbf{Exercise 11.5}\par	
-	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2I-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible. Therefore, we can find $(^n _i)$ paths as requested.
+
 
 \textbf{Exercise 11.3}\par
     Based on the mathematical induction, we have:\par
@@ -61,6 +92,10 @@
     
     
     $3.$ We can set the capacity of every vertex in $G$ as $1$ and transform $G = (V,E,c)$ into a network $G\prime = (V\prime,E\prime,c\prime)$ by the method we give in $11.4.1$. Then we use Edmonds-Karp algorithm on the network. If the maximum flow is k, we find $k$ paths $p_1,p_2,\cdots p_k$, each from $s$ to $t$, such that the paths are internally vertex disjoint.
+
+    \textbf{Exercise 11.5}\par	
+	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2I-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible. Therefore, we can find $(^n _i)$ paths as requested.
+
 
 
 \textbf{Exercise 11.6}\par
@@ -86,3 +121,4 @@
 	
 	In this network, $b$, $c$, $d$, $f$, $g$, $h$, $i$ is sometimes full and $a$ is never full. And $a$, $b$, $c$, $d$, $f$, $g$, $h$, $i$ are all never crossing.\par
 	
+\end{document}
