@@ -32,16 +32,36 @@
 	 $$
 
 	 where we get $p\leq 0$ and $p>0$ which contradict each other. So  different strings cannot transform into a same string by the method.\par
-	 
+	
 	 Accordingly, we can get a matching of size $(^n _k)$ between the k-th layer and the $(k+1)$-th layer.
 \textbf{Exercise 11.2}\par
-	This case, $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$. We use contradiction to prove it. 
-	Assume $|\Gamma(A)|<|A|$, $\exists A\subseteq L$. Since every vertex has degree $d$, consider $A$, we have $d\times |A|$ edges. 
-	Since $\frac{d\times|A|}{|\Gamma(A)|}>d$, there must exist a vertex in $R$ which degree is larger than $d$. It is a contradiction. 
+	This case, $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$. We use contradiction to prove it.
+	Assume $|\Gamma(A)|<|A|$, $\exists A\subseteq L$. Since every vertex has degree $d$, consider $A$, we have $d\times |A|$ edges.
+	Since $\frac{d\times|A|}{|\Gamma(A)|}>d$, there must exist a vertex in $R$ which degree is larger than $d$. It is a contradiction.
 	Therefore, $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$. According to course video, if $|\Gamma(A)|\ge |A|$ for every $A\subseteq L$,
-	then (and only then) there exists a matching of size $|L|$. $G$ has a perfect matching.\par 	 
-\textbf{Exercise 11.5}\par	 
+	then (and only then) there exists a matching of size $|L|$. $G$ has a perfect matching.\par 	
+\textbf{Exercise 11.5}\par	
 	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2I-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible. Therefore, we can find $(^n _i)$ paths as requested.
+
+\textbf{Exercise 11.3}\par
+    Based on the mathematical induction, we have:\par
+    $(1)$ When $d=1$, obviously the edges $E(G)$ can be partitioned into $d$ perfect matchings.\par
+    $(2)$ When $d>1$, we suppose when $d=n$, the edges $E(G)$ can be partitioned into $d$ perfect matchings. When $d=n+1$, we can find a matching $M$ of size $|L|$ based on the $11.2$, now we delete $M$ from $E(G)$ and we get a new bipartite graph $G\prime$ whose every vertex has degree $n$. Based on the inductive assumption, the edge $E(G\prime)$ can be partitioned into n perfect matchings. We can add $M$ to $M_1,\cdots,M_n$ and get matchings $M_1,\cdots,M_{n+1} \subset E(G)$ such that $(1) M_i \cap M_j = \emptyset for 1\leq i<j\leq n+1$ and $(2) M_1\cup M_2 \cup\cdots\cup M_{n+1} = E(G)$.\par
+    Therefore, if G is a $d$-regular bipartite graph, the edges $E(G)$ can be partitioned into $d$ perfect matchings.
+
+\textbf{Exercise 11.4}\par
+    $1.$ For every vertex $X \in V$, add $X\prime$ to constitute $V\prime$. If the capacity of $X$ is $c(X)$ in $G$, the capacity of $edge(X,X\prime)$ in $(G\prime)$ is $c(X).$ If $edge(X,Y)\in E$, $edge(X\prime,Y)\in E\prime$ and $c(X\prime,Y)$ is $\infty$.\par
+    $2.$
+    \begin{figure}[H]
+  	\centering
+  	\includegraphics[width=9cm]{11_4_2.png}
+  	\caption{}
+  	\label{}
+  	\end{figure}
+    
+    
+    $3.$ We can set the capacity of every vertex in $G$ as $1$ and transform $G = (V,E,c)$ into a network $G\prime = (V\prime,E\prime,c\prime)$ by the method we give in $11.4.1$. Then we use Edmonds-Karp algorithm on the network. If the maximum flow is k, we find $k$ paths $p_1,p_2,\cdots p_k$, each from $s$ to $t$, such that the paths are internally vertex disjoint.
+
 
 \textbf{Exercise 11.6}\par
 	1. $e$ is always full. $b$, $c$, $d$, $f$, $g$, $h$, $i$ is sometimes full. $a$ is never full.\par
@@ -52,16 +72,17 @@
 	Proof: Consider an edge $e$ which is always full. We assume the max flow is $MAX$ and $f(e)=c(e)$. We delete this edge and the max flow of residual network is $MAX-c(e)$.
 	There must exist minimum cut $MAX-c(e)$ in residual network. We add edge $e$ to this cut and will get minimum cut $MAX$ in original network. Therefore, edge $e$ can be crossing and  is impossible to be never crossing.\par
 	It is impossible to be sometimes full and always crossing, sometimes full and sometimes crossing, never full and always crossing, never full and sometimes crossing.\par
-	Proof: These four cases can be proved together. No matter whether it is sometimes full or never full, the edge $e$ which can be not full. We assume the max flow is $MAX$ and 
-	$f(e)=m<c(e)$. We delete edge $e$ and the max flow of residual network is $MAX-m$. There must exist minimum cut $MAX-m$ in residual network. If edge $e$ can be crossing, then 
+	Proof: These four cases can be proved together. No matter whether it is sometimes full or never full, the edge $e$ which can be not full. We assume the max flow is $MAX$ and
+	$f(e)=m<c(e)$. We delete edge $e$ and the max flow of residual network is $MAX-m$. There must exist minimum cut $MAX-m$ in residual network. If edge $e$ can be crossing, then
 	minimum cut in 	original network will be $MAX-m+c(e)>MAX$, which is impossible. Therefore edge $e$ is never crossing. Always crossing and sometimes crossing are impossible.\par
 	It is possible to be sometimes full and never crossing, never full and never crossing.\par
 	Example:\par
-	\begin{figure}[H]
+    \begin{figure}[H]
   	\centering
   	\includegraphics[scale=0.5]{1.png}
   	\caption{}
   	\label{}
   	\end{figure}
+	
 	In this network, $b$, $c$, $d$, $f$, $g$, $h$, $i$ is sometimes full and $a$ is never full. And $a$, $b$, $c$, $d$, $f$, $g$, $h$, $i$ are all never crossing.\par
-	 
+	
