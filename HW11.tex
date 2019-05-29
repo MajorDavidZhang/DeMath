@@ -95,7 +95,9 @@
     $3.$ We can set the capacity of every vertex in $G$ as $1$ and transform $G = (V,E,c)$ into a network $G\prime = (V\prime,E\prime,c\prime)$ by the method we give in $11.4.1$. Then we use Edmonds-Karp algorithm on the network. If the maximum flow is k, we find $k$ paths $p_1,p_2,\cdots p_k$, each from $s$ to $t$, such that the paths are internally vertex disjoint.\par
 
  \textbf{Exercise 11.5}\par	
+
 	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2i-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible, which means we can find an unique 0 and change it to 1. Therefore, we can find $(^n _i)$ paths as requested.\par
+
 
 
 
