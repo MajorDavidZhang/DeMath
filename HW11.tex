@@ -82,7 +82,7 @@
     Therefore, if G is a $d$-regular bipartite graph, the edges $E(G)$ can be partitioned into $d$ perfect matchings.\par
 
 \textbf{Exercise 11.4}\par
-    $1.$ For every vertex $X \in V$, add $X\prime$ to constitute $V\prime$. If the capacity of $X$ is $c(X)$ in $G$, the capacity of $edge(X,X\prime)$ in $(G\prime)$ is $c(X).$ If $edge(X,Y)\in E$, $edge(X\prime,Y)\in E\prime$ and $c(X\prime,Y)$ is $\infty$.If the original flow is from s to t, then the flow in $G\prime$ is from s to $t/prime$.\par
+    $1.$ For every vertex $X \in V$, add $X\prime$ to constitute $V\prime$. If the capacity of $X$ is $c(X)$ in $G$, the capacity of $edge(X,X\prime)$ in $(G\prime)$ is $c(X).$ If $edge(X,Y)\in E$, $edge(X\prime,Y)\in E\prime$ and $c(X\prime,Y)$ is $\infty$.If the original flow is from s to t, then the flow in $G\prime$ is from s to $t\prime$.\par
     $2.$
     \begin{figure}[H]
   	\centering
@@ -90,12 +90,12 @@
   	\caption{}
   	\label{}
   	\end{figure}
-    
-    
+
+
     $3.$ We can set the capacity of every vertex in $G$ as $1$ and transform $G = (V,E,c)$ into a network $G\prime = (V\prime,E\prime,c\prime)$ by the method we give in $11.4.1$. Then we use Edmonds-Karp algorithm on the network. If the maximum flow is k, we find $k$ paths $p_1,p_2,\cdots p_k$, each from $s$ to $t$, such that the paths are internally vertex disjoint.\par
 
  \textbf{Exercise 11.5}\par	
-	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2I-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible. Therefore, we can find $(^n _i)$ paths as requested.\par
+	In the i-th layer, there are $(^n _i)$ vertexes, for each vertex, we can form a path that ends at the $(n-i)$-th layer with the method we show in \textbf{Exercise 11.1}. When we reach a layer with more '1' than '0', we can still use this method to form a matching for the following reason. Since we begin at the i-th layer$(i<n/2)$, we have $(n-i)$ '0's and i '1's, so the score of the last digit equals $(n-2i)$, each time we reach the next layer, the max score minus 1 for the  digits before the changing digit remains unchanged. Totally we cross $(n-2i-1)$ layers from the i-th layer to $(n-i)$-th layer, so before we reach the $(n-i)$-th layer, the max score of every string in such path is always positive, which means the algorithm is feasible. Therefore, we can find $(^n _i)$ paths as requested.\par
 
 
 
@@ -164,4 +164,4 @@
 
  \textbf{Question}\par
   	When we considered Exercise 11.5, we used the method in 11.4, setting the capacity of each vertex as 1 and trying to find a maximum flow of size (n,i). Of course, we added a source and a sink and made their capacity infinite. Then we tried to prove its minimum cut is (n,i). It was simple to find a cut of size (n,i) by just cutting all the vertices in the i-th layer. However, we failed to prove it was the minimum cut. So we changed our method and constructed all those paths. We would like to know how to prove this cut is minimum.
-\end{document}
+\end{document} 
